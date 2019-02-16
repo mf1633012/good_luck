@@ -31,7 +31,7 @@ parser.add_argument('--pretrain_embedding', type=str, default='pretrain', help='
 parser.add_argument('--embedding_dim', type=int, default=100, help='random init char embedding_dim')
 parser.add_argument('--shuffle', type=str2bool, default=True, help='shuffle training data before each epoch')
 parser.add_argument('--mode', type=str, default='train', help='train/test/demo')
-parser.add_argument('--demo_model', type=str, default='1548775595', help='model for test and demo')
+parser.add_argument('--demo_model', type=str, default='1550131589', help='model for test and demo')
 args = parser.parse_args()
 
 

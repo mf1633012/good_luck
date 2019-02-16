@@ -58,7 +58,15 @@ class BiLSTM_CRF(object):
                                                      ids=self.word_ids,
                                                      name="word_embeddings")
 
-        self.word_embeddings =  tf.nn.dropout(word_embeddings, self.dropout_pl)
+            #modify the code here
+            m,n=100,100
+            L=0.25
+            K=0.5
+            A=np.eye(m,n,k=-1,dtype=np.float32)*L+np.eye(m,n,dtype=np.float32)*K+np.eye(m,n,k=1,dtype=np.float32)*L
+            A = tf.cast(tf.convert_to_tensor(A), tf.float32)
+            #new_embeddings=[tf.matmul(word_embeddings[item,:,:],A) for item in range(self.batch_size)]
+            new_embeddings=tf.map_fn(lambda x: tf.matmul(x,A), word_embeddings)
+        self.word_embeddings =  tf.nn.dropout(new_embeddings, self.dropout_pl)
 
     def biLSTM_layer_op(self):
         with tf.variable_scope("bi-lstm"):
@@ -138,7 +146,6 @@ class BiLSTM_CRF(object):
 
     def add_summary(self, sess):
         """
-
         :param sess:
         :return:
         """
@@ -147,7 +154,6 @@ class BiLSTM_CRF(object):
 
     def train(self, train, dev):
         """
-
         :param train:
         :param dev:
         :return:
@@ -171,7 +177,6 @@ class BiLSTM_CRF(object):
 
     def demo_one(self, sess, sent):
         """
-
         :param sess:
         :param sent: 
         :return:
@@ -188,7 +193,6 @@ class BiLSTM_CRF(object):
 
     def run_one_epoch(self, sess, train, dev, tag2label, epoch, saver):
         """
-
         :param sess:
         :param train:
         :param dev:
@@ -224,7 +228,6 @@ class BiLSTM_CRF(object):
 
     def get_feed_dict(self, seqs, labels=None, lr=None, dropout=None):
         """
-
         :param seqs:
         :param labels:
         :param lr:
@@ -247,7 +250,6 @@ class BiLSTM_CRF(object):
 
     def dev_one_epoch(self, sess, dev):
         """
-
         :param sess:
         :param dev:
         :return:
@@ -261,7 +263,6 @@ class BiLSTM_CRF(object):
 
     def predict_one_batch(self, sess, seqs):
         """
-
         :param sess:
         :param seqs:
         :return: label_list
@@ -284,7 +285,6 @@ class BiLSTM_CRF(object):
 
     def evaluate(self, label_list, seq_len_list, data, epoch=None):
         """
-
         :param label_list:
         :param seq_len_list:
         :param data:
@@ -311,4 +311,3 @@ class BiLSTM_CRF(object):
         metric_path = os.path.join(self.result_path, 'result_metric_' + epoch_num)
         for _ in conlleval(model_predict, label_path, metric_path):
             self.logger.info(_)
-
