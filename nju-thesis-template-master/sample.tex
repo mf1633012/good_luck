@@ -416,26 +416,56 @@ word2vec有许多重要的参数直接决定了训练的效果。上下文窗口
 
 \section{循环神经网络}
 
+\subsection{循环神经网络概述}
+
 深度学习是基于学习数据表示的更广泛机器学习方法的一种，深度神经网络是深度学习中最重要，应用最广的模型。深度神经网络体系结构已应用与计算机视觉、语音识别、自然语言处理、音频识别、机器翻译、生物信息学、药物设计、医学图像分析等领域。递归神经网络是一类人工神经网络，这类网络善于 预测未来。常用于分析时间序列数据，例如股票价格；在自动驾驶中可以预测汽车的行驶轨迹，避免事故。总的来说这样的网络可以输入文本、句子、语音等，使用到机器翻译、语音识别、语义分析等任务中。
 
 \begin{figure}[h]
 \centering
 \begin{minipage}[t]{\textwidth}
-\includegraphics[width=0.9\textwidth,height=5cm]{./figure/simple_rnn.jpg}
+\includegraphics[width=0.9\textwidth,height=5.0cm]{./figure/simple_rnn.jpg}
 \caption{简单的RNN模型}
 \label{lab:1}
 \end{minipage}
 \end{figure}
 
-不同于前馈神经网络，循环神经网络激活方向不仅仅只向一个方向流动。最简单的RNN，只由一个神经元接受输入产生输出，然后将输出发回自身，如图所示。
+\begin{figure}[h]
+\centering
+\begin{minipage}[t]{\textwidth}
+\includegraphics[width=0.9\textwidth,height=5.0cm]{./figure/RNN层.jpg}
+\caption{一个RNN层和展开结构}
+\label{lab:1}
+\end{minipage}
+\end{figure}
+
+不同于前馈神经网络，循环神经网络激活方向不仅仅只向一个方向流动。最简单的RNN，只由一个神经元接受输入产生输出，然后将输出发回自身，如图2-4所示。每个时间步骤t，每个神经都从上个时间步骤$y _ { ( t - 1 ) }$接收输入向量x和输出向量，一层RNN神经元如图所示。
+
+由于在时间步骤t时刻循环回去的信息是上一个时刻的信息，这种网络结构使得输入可以是以前的时间步骤，因而在某种意义上RNN是一种具有“记忆”的神经网络结构。单个盛景园在时间步骤间保持某种状态，成为记忆单元。单个循环神经元或是一层循环神经元是一个基本结构，有更多复杂的网络结构是以这样的基本结构堆叠出来的。RNN可以同时接受一些列输入并同时产生一系列输出，如图所示。这样的类型的网络在处理序列数据上有着非常好的表现，可以用于预测时间序列等任务。
+
+\subsection{长短期记忆网络}
+
+长短期记忆网络（LSTM）细胞是由Sepp Hochreit和Jurgen Schmidhuber于1997年提出的\cite{Hochreit}，并在多个领域任务上创造了记录。在语音识别技术、连续手写识别领域都曾创造当时的最佳纪录。2014年后，在深度神经网络模型中收到了广泛的应用，如果将LSTM单元视为一个黑盒，那么它可以非常像一个基本单元，并且性能会更好，训练收敛也更加容易，并且这种结构可以检测数据中的中长期依赖性。
+如果不看LSTM单元内的结构的话，LSTM单元看起来和一个普通单元一样，知识它的状态被分成两个向量:${ h } _ { ( t ) }$和$ { c } _ { ( t ) }$，可以将${ h } _ { ( t ) }$看做短期状态，${ c } _ { ( t ) }$看作长期状态。LSTM单元的结构如图所示。
 
 
 
+\begin{figure}[h]
+\centering
+\begin{minipage}[t]{\textwidth}
+\includegraphics[width=1.0\textwidth,height=7.0cm]{./figure/LSTM.jpg}
+\caption{LSTM单元}
+\label{lab:1}
+\end{minipage}
+\end{figure}
 
+长短时记忆网络的思路很简单，相较原始RNN结构比，原始RNN隐藏层只有一个状态h，这个状态对短期的输入敏感对长期的输入不敏感。因而LSTM单元中，增加一个状态c，用这个状态来保存长期状态。LSTM有能力向单元状态中添加或是一处信息，通过结构来管理，这种结构称为门限。LSTM关键思想是让网络可以学习长期状态下选择性地存储的内容、丢弃内容以及从中读取内容。当长期状态${ c } _ { ( t ) }$从左向右穿越网络时，可以看到数据流首先通过一个起始门，丢弃一些记忆，然后通过加法运算（添加由输入门选择的记忆）添加一些新的内存，最终${ c } _ { ( t ) }$不做更多的转换被直接发送出去。因而在这个模型中，在每一个时间步中，一些记忆被丢弃，一些记忆被添加进来。除此以外，${ h } _ { ( t ) }$在执行了第二步操作后，对长期状态进行复制并通过tanh函数传递，然后通过输出门对结果进行过滤。这就产生了短期状态（相当于在这一个单元步骤中的输出）。
 
+简要而言，一个LSTM单元在输入门，可以学习去识别一个重要的输入，并将输入存储在长期状态中。只要没有被遗忘门作用的话，这个状态会一直被保存，直到需要的时候抽取走这个状态。这就解释了为何LSTM模型可以成功的原因，LSTM模型的特点就是捕获长期模式，因而在长时间录音、文本、音频等任务上有很好的发挥。
 
 
 \section{概率隐语义分析技术}
+
+
 
 \section{本章小结}
 
@@ -486,58 +516,6 @@ word2vec有许多重要的参数直接决定了训练的效果。上下文窗口
 \section{不足与展望}
 
 
-\begin{itemize}
-\item 第一章，
-\item 第二章，
-
-\end{itemize}
-
-
-
-\chapter{相关工作}
-
-\lipsum[1]
-
-\chapter{MPTCP速率分配问题分析}
-
-\lipsum[1]
-
-\section{MPTCP速率分配场景}\label{sec:rate}
-\lipsum[1]
-\subsection{负载均衡}
-\lipsum[1]
-
-
-
-
-
-
-\chapter{实验验证}
-\lipsum[2]
-
-实验硬件设备如图(\ref{img:1})所示。
-\begin{figure}[htbp]
-\begin{minipage}[t]{0.5\textwidth}
-\centering
-\includegraphics[width=0.9\textwidth]{./figure/github.jpg}
-\caption{实验硬件设备总览}
-\label{img:1}
-\end{minipage}
-\begin{minipage}[t]{0.5\textwidth}
-\centering
-\includegraphics[width=0.9\textwidth]{./figure/github.jpg}
-\caption{实验测量示意图}
-\label{img:2}
-\end{minipage}
-\end{figure}
-
-
-
-
-
-
-\chapter{总结与展望}
-\lipsum[1]
 
 
 
