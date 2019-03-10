@@ -1,0 +1,5 @@
+processed 177232 tokens with 6192 phrases; found: 5601 phrases; correct: 4780.
+accuracy:  97.62%; precision:  85.34%; recall:  77.20%; FB1:  81.07
+              LOC: precision:  88.05%; recall:  81.72%; FB1:  84.77  2670
+              ORG: precision:  77.37%; recall:  72.43%; FB1:  74.82  1246
+              PER: precision:  86.94%; recall:  73.84%; FB1:  79.86  1685

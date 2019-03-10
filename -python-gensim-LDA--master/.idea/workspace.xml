@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ea2a2513-20c2-474e-b41b-b876dc9e6766" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../LDA-master/LDA.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Principles For Navigating Big Debt Crises By Ray Dalio.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1).zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/conlleval_rev.pl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path/original/link.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path/original/test1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path/original/testright1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path/original/train1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path/test_data" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path/train_data" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path/word2id.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1521112368/checkpoints/checkpoint" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1521112368/checkpoints/model-31680.data-00000-of-00001" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1521112368/checkpoints/model-31680.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1521112368/checkpoints/model-31680.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1521112368/results/label_test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1521112368/results/log.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1521112368/results/result_metric_test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/checkpoints/checkpoint" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/checkpoints/model-28512.data-00000-of-00001" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/checkpoints/model-28512.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/checkpoints/model-28512.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/checkpoints/model-29304.data-00000-of-00001" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/checkpoints/model-29304.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/checkpoints/model-29304.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/checkpoints/model-30096.data-00000-of-00001" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/checkpoints/model-30096.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/checkpoints/model-30096.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/checkpoints/model-30888.data-00000-of-00001" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/checkpoints/model-30888.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/checkpoints/model-30888.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/checkpoints/model-31680.data-00000-of-00001" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/checkpoints/model-31680.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/checkpoints/model-31680.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/readme.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/label_1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/label_10" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/label_11" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/label_12" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/label_13" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/label_14" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/label_15" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/label_16" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/label_17" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/label_18" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/label_19" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/label_2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/label_20" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/label_21" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/label_22" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/label_23" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/label_24" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/label_25" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/label_26" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/label_27" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/label_28" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/label_29" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/label_3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/label_30" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/label_31" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/label_32" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/label_33" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/label_34" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/label_35" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/label_36" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/label_37" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/label_38" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/label_39" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/label_4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/label_40" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/label_5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/label_6" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/label_7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/label_8" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/label_9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/label_test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/log.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/result_metric_1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/result_metric_10" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/result_metric_11" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/result_metric_12" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/result_metric_13" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/result_metric_14" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/result_metric_15" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/result_metric_16" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/result_metric_17" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/result_metric_18" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/result_metric_19" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/result_metric_2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/result_metric_20" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/result_metric_21" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/result_metric_22" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/result_metric_23" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/result_metric_24" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/result_metric_25" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/result_metric_26" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/result_metric_27" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/result_metric_28" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/result_metric_29" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/result_metric_3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/result_metric_30" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/result_metric_31" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/result_metric_32" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/result_metric_33" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/result_metric_34" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/result_metric_35" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/result_metric_36" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/result_metric_37" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/result_metric_38" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/result_metric_39" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/result_metric_4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/result_metric_40" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/result_metric_5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/result_metric_6" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/result_metric_7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/result_metric_8" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/result_metric_9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/results/result_metric_test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1548775595/summaries/events.out.tfevents.1548775599.DESKTOP-A2IN1A6" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1550048970/checkpoints/checkpoint" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1550048970/readme.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1550048970/results/label_1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1550048970/results/label_2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1550048970/results/label_3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1550048970/results/label_4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1550048970/results/label_5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1550048970/results/label_6" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1550048970/results/label_7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1550048970/results/log.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1550048970/results/result_metric_1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1550048970/results/result_metric_2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1550048970/results/result_metric_3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1550048970/results/result_metric_4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1550048970/results/result_metric_5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1550048970/results/result_metric_6" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1550048970/results/result_metric_7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/data_path_save/1550048970/summaries/events.out.tfevents.1550048975.DESKTOP-A2IN1A6" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/eval.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/model.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/pics/demo.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/pics/pic1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/pics/pic2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/pretrain_embedding.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../zh-NER-TF-master (1)/zh-NER-TF-master/utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../~$素材 (新).docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../代码修改log.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../实验素材 (新).docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../实验素材.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../文献综述材料/C18-1182.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../文献综述材料/IJRET20130214011.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../毕业论文V1.0.docx" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/topicmodel TF IDF.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="30" column="23" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="23" />
+              <folding>
+                <element signature="e#0#16#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://C:/ProgramData/Anaconda3/Lib/site-packages/gensim/models/ldamodel.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="149">
+              <caret line="531" selection-start-line="531" selection-end-line="531" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://C:/ProgramData/Anaconda3/Lib/site-packages/gensim/utils.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="149">
+              <caret line="861" selection-start-line="861" selection-end-line="861" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/qutingci.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="437">
+              <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/topicmodel3.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/qutingci.py" />
+        <option value="$PROJECT_DIR$/topicmodel TF IDF.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-47" />
+    <option name="y" value="251" />
+    <option name="width" value="1940" />
+    <option name="height" value="1050" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="-python-gensim-LDA--master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="-python-gensim-LDA--master" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.topicmodel TF IDF">
+    <configuration name="qutingci" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="-python-gensim-LDA--master" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/qutingci.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="topicmodel TF IDF" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="-python-gensim-LDA--master" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/topicmodel TF IDF.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="topicmodel3" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="-python-gensim-LDA--master" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/topicmodel3.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.topicmodel TF IDF" />
+        <item itemvalue="Python.qutingci" />
+        <item itemvalue="Python.topicmodel3" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ea2a2513-20c2-474e-b41b-b876dc9e6766" name="Default Changelist" comment="" />
+      <created>1551944234222</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1551944234222</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24966975" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Python Console" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39943343" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/topicmodel TF IDF.py</url>
+          <line>27</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/topicmodel TF IDF.py</url>
+          <line>28</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/topicmodel TF IDF.py</url>
+          <line>31</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/topicmodel TF IDF.py</url>
+          <line>32</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/topicmodel TF IDF.py</url>
+          <line>29</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/topicmodel TF IDF.py</url>
+          <line>33</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/ProgramData/Anaconda3/Lib/site-packages/gensim/models/ldamodel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="531" selection-start-line="531" selection-end-line="531" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qutingci.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/topicmodel3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/ProgramData/Anaconda3/Lib/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="320" selection-start-line="320" selection-end-line="320" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/ProgramData/Anaconda3/Lib/jieba/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="304" selection-start-line="304" selection-end-line="304" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/ProgramData/Anaconda3/Lib/site-packages/gensim/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="861" selection-start-line="861" selection-end-line="861" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/topicmodel TF IDF.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="30" column="23" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

@@ -1,0 +1,13 @@
+2019-02-26 12:57:13,849:INFO: Namespace(CRF=True, batch_size=64, clip=5.0, demo_model='1550131589', dropout=0.5, embedding_dim=100, epoch=40, hidden_dim=300, lr=0.001, mode='train', optimizer='Adam', pretrain_embedding='pretrain', shuffle=True, test_data='data_path', train_data='data_path', update_embedding=True)
+2019-02-26 12:57:18,815:INFO: 2019-02-26 12:57:15 epoch 1, step 1, loss: 94.94, global_step: 1
+2019-02-26 12:57:18,815:INFO: 2019-02-26 12:57:15 epoch 1, step 1, loss: 94.94, global_step: 1
+2019-02-26 13:11:25,174:INFO: 2019-02-26 12:57:15 epoch 1, step 300, loss: 9.591, global_step: 300
+2019-02-26 13:11:25,174:INFO: 2019-02-26 12:57:15 epoch 1, step 300, loss: 9.591, global_step: 300
+2019-02-26 13:24:49,646:INFO: 2019-02-26 12:57:15 epoch 1, step 600, loss: 6.911, global_step: 600
+2019-02-26 13:24:49,646:INFO: 2019-02-26 12:57:15 epoch 1, step 600, loss: 6.911, global_step: 600
+2019-02-26 13:33:22,277:INFO: 2019-02-26 12:57:15 epoch 1, step 792, loss: 3.905, global_step: 792
+2019-02-26 13:33:22,277:INFO: 2019-02-26 12:57:15 epoch 1, step 792, loss: 3.905, global_step: 792
+2019-02-26 13:33:22,813:INFO: ===========validation / test===========
+2019-02-26 13:33:22,813:INFO: ===========validation / test===========
+2019-02-26 13:34:35,187:INFO: 2019-02-26 13:34:32 epoch 2, step 1, loss: 5.384, global_step: 793
+2019-02-26 13:34:35,187:INFO: 2019-02-26 13:34:32 epoch 2, step 1, loss: 5.384, global_step: 793

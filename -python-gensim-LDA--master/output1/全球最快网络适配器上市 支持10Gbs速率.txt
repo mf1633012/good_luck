@@ -1,0 +1,12 @@
+
+　　腾讯科技讯10月29日消息，Emulex公司（NYSE：ELX）日前宣布，其OneConnect通用聚合网络适配器（UCNA）和OneCommandManager开始通过Emulex分销渠道全面上市。OneConnectUCNA可提供世界上最快的10Gb/s以太网性能，能够高效地整合网络和存储基础架构，而无需更改管理域。
+　　
+　　Emulex的OneConnectUCNA提供独特的边增长边付费功能，是唯一一款能为传输控制协议/互联网协议（TCP/IP）、互联网小型计算机系统接口（iSCSI）和FibreChanneloverEthernet（FCoE）提供全面硬件协议卸载功能的服务器适配器。
+　　“Emulex的网络融合方案以服务器为中心，这意味着我们能够用单一架构和产品系列，实现服务器和虚拟化向10Gb/s以太网。”Emulex公司首席营销管兼业务开发高级副总裁SteveDaheb说道。“独特的边增长边付费模式为用户提供一个基本的10Gb/s以太网适配器及面向iSCSI和FCoE硬件加速的现场升级服务，帮助他们轻松扩展基础架构。”
+　　EmulexOneConnectUCNA是一款单芯片高性能10Gbps以太网产品平台，它通过多功能服务器适配器为网络和存储流量提供服务器连接。
+　　EmulexOneConnect系列包括高性能10Gb/s以太网适配器（OCe10102-N）、10Gb/siSCSI适配器（OCe10102-I）和10Gb/sFCoE聚合网络适配器（OCe10102-F）。
+　　EmulexOneConnect适配器支持包括TCPChimney在内的全面TCP/IP硬件卸载，并且当最终用户做好网络融合准备时，可以为iSCSI或FCoE添加硬件卸载功能。
+　　与同类其它10Gb/s网络适配器及聚合网络适配器不同，Emulex的OneConnectUCNA架构允许最终用户购买基本的10Gb/s以太网适配器。该适配器包括TCP/IP和TCPChimney硬件卸载，同时可以为iSCSI或FcoE提供全面的硬件卸载功能。
+　　EmulexOneConnectUCNA架构允许IT管理员融合他们的物理网络，同时维持他们的应用、服务器、存储和安全管理域。这样，公司就能够降低适配器、交换机端口、布线、电源和冷却成本，而不用中断他们目前的管理结构或网络分段配置。(文/京东)专题回顾：盛大网络收购视频网站酷6网
+[评]
+　　[责任编辑：jasondeng]
