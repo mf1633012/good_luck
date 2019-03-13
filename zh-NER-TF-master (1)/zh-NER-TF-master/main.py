@@ -26,12 +26,14 @@ parser.add_argument('--CRF', type=str2bool, default=True, help='use CRF at the t
 parser.add_argument('--lr', type=float, default=0.001, help='learning rate')
 parser.add_argument('--clip', type=float, default=5.0, help='gradient clipping')
 parser.add_argument('--dropout', type=float, default=0.5, help='dropout keep_prob')
-parser.add_argument('--update_embedding', type=str2bool, default=True, help='update embedding during training')
+parser.add_argument('--update_embedding', type=str2bool, default=False, help='update embedding during training')
 parser.add_argument('--pretrain_embedding', type=str, default='pretrain', help='use pretrained char embedding or init it randomly')
 parser.add_argument('--embedding_dim', type=int, default=100, help='random init char embedding_dim')
 parser.add_argument('--shuffle', type=str2bool, default=True, help='shuffle training data before each epoch')
 parser.add_argument('--mode', type=str, default='train', help='train/test/demo')
-parser.add_argument('--demo_model', type=str, default='1550131589', help='model for test and demo')
+parser.add_argument('--demo_model', type=str, default='1552404325', help='model for test and demo')
+parser.add_argument('--lambda1', type=float, default=0, help='first weight')
+parser.add_argument('--lambda2', type=float, default=0, help='second weight')
 args = parser.parse_args()
 
 
@@ -43,9 +45,18 @@ else:
     embedding_path = 'pretrain_embedding.npy'
     #embeddings = np.array(np.load(embedding_path))
     A=np.load(embedding_path)
-    embeddings_mat = np.zeros((len(word2id), args.embedding_dim),dtype=np.float32)
-    for i in range(len(word2id)):
-        embeddings_mat[i] = A[list(word2id.keys())[list(word2id.values()).index(54)]]
+#    embeddings_mat = np.zeros((len(word2id), args.embedding_dim),dtype=np.float32)
+    embeddings_mat = np.random.uniform(-0.25, 0.25, (len(word2id), args.embedding_dim))
+#    for i in range(len(word2id)):
+#        embeddings_mat[i] = A[list(word2id.keys())[list(word2id.values()).index(i)]]
+#        embeddings_mat[i] = A[list(word2id.keys())[0]]
+    k=0
+    for i in word2id:
+        if i in A:
+            embeddings_mat[k]=A[i]
+        else:
+            print(i)
+        k=k+1
     embeddings=embeddings_mat
 
 ## read corpus and get training data
@@ -64,7 +75,7 @@ if not os.path.exists(output_path): os.makedirs(output_path)
 summary_path = os.path.join(output_path, "summaries")
 paths['summary_path'] = summary_path
 if not os.path.exists(summary_path): os.makedirs(summary_path)
-model_path = os.path.join(output_path, "checkpoints/")
+model_path = os.path.join(output_path, "checkpoints/")#cause the error?
 if not os.path.exists(model_path): os.makedirs(model_path)
 ckpt_prefix = os.path.join(model_path, "model")
 paths['model_path'] = ckpt_prefix

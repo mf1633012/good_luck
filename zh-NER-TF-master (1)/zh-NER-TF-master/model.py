@@ -30,6 +30,8 @@ class BiLSTM_CRF(object):
         self.logger = get_logger(paths['log_path'])
         self.result_path = paths['result_path']
         self.config = config
+        self.lambda1=args.lambda1
+        self.lambda2=args.lambda2
 
     def build_graph(self):
         self.add_placeholders()
@@ -50,6 +52,7 @@ class BiLSTM_CRF(object):
 
     def lookup_layer_op(self):
         with tf.variable_scope("words"):
+            
             _word_embeddings = tf.Variable(self.embeddings,
                                            dtype=tf.float32,
                                            trainable=self.update_embedding,
@@ -60,13 +63,15 @@ class BiLSTM_CRF(object):
 
             #modify the code here
             m,n=100,100
-            L=0.25
-            K=0.5
-            A=np.eye(m,n,k=-1,dtype=np.float32)*L+np.eye(m,n,dtype=np.float32)*K+np.eye(m,n,k=1,dtype=np.float32)*L
+            J=self.lambda2
+            L=self.lambda1
+            K=1
+            A=np.eye(m,n,k=-2,dtype=np.float32)*J+np.eye(m,n,k=-1,dtype=np.float32)*L+np.eye(m,n,dtype=np.float32)*K+np.eye(m,n,k=1,dtype=np.float32)*L+np.eye(m,n,k=2,dtype=np.float32)*J
             A = tf.cast(tf.convert_to_tensor(A), tf.float32)
-            #new_embeddings=[tf.matmul(word_embeddings[item,:,:],A) for item in range(self.batch_size)]
+            new_embeddings=[tf.matmul(word_embeddings[item,:,:],A) for item in range(self.batch_size)]
             new_embeddings=tf.map_fn(lambda x: tf.matmul(x,A), word_embeddings)
         self.word_embeddings =  tf.nn.dropout(new_embeddings, self.dropout_pl)
+#        self.word_embeddings =  tf.nn.dropout(word_embeddings, self.dropout_pl)
 
     def biLSTM_layer_op(self):
         with tf.variable_scope("bi-lstm"):
@@ -206,8 +211,8 @@ class BiLSTM_CRF(object):
         start_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
         batches = batch_yield(train, self.batch_size, self.vocab, self.tag2label, shuffle=self.shuffle)
         for step, (seqs, labels) in enumerate(batches):
-
-            sys.stdout.write(' processing: {} batch / {} batches.'.format(step + 1, num_batches) + '\r')
+            if(num_batches%50==0):
+                sys.stdout.write(' processing: {} batch / {} batches.'.format(step + 1, num_batches) + '\r')
             step_num = epoch * num_batches + step + 1
             feed_dict, _ = self.get_feed_dict(seqs, labels, self.lr, self.dropout_keep_prob)
             _, loss_train, summary, step_num_ = sess.run([self.train_op, self.loss, self.merged, self.global_step],
