@@ -1,0 +1,27 @@
+2019-03-12 21:33:17,581:INFO: Namespace(CRF=True, batch_size=64, clip=5.0, demo_model='1550131589', dropout=0.5, embedding_dim=100, epoch=40, hidden_dim=300, lr=0.001, mode='train', optimizer='Adam', pretrain_embedding='pretrain', shuffle=True, test_data='data_path', train_data='data_path', update_embedding=False)
+2019-03-12 21:33:24,306:INFO: 2019-03-12 21:33:20 epoch 1, step 1, loss: 69.87, global_step: 1
+2019-03-12 21:33:24,306:INFO: 2019-03-12 21:33:20 epoch 1, step 1, loss: 69.87, global_step: 1
+2019-03-12 21:50:51,116:INFO: 2019-03-12 21:33:20 epoch 1, step 300, loss: 20.01, global_step: 300
+2019-03-12 21:50:51,116:INFO: 2019-03-12 21:33:20 epoch 1, step 300, loss: 20.01, global_step: 300
+2019-03-12 22:07:34,385:INFO: 2019-03-12 21:33:20 epoch 1, step 600, loss: 16.28, global_step: 600
+2019-03-12 22:07:34,385:INFO: 2019-03-12 21:33:20 epoch 1, step 600, loss: 16.28, global_step: 600
+2019-03-12 22:18:52,527:INFO: 2019-03-12 21:33:20 epoch 1, step 792, loss: 19.3, global_step: 792
+2019-03-12 22:18:52,527:INFO: 2019-03-12 21:33:20 epoch 1, step 792, loss: 19.3, global_step: 792
+2019-03-12 22:18:53,233:INFO: ===========validation / test===========
+2019-03-12 22:18:53,233:INFO: ===========validation / test===========
+2019-03-12 22:20:40,817:INFO: processed 177232 tokens with 6192 phrases; found: 0 phrases; correct: 0.
+2019-03-12 22:20:40,817:INFO: processed 177232 tokens with 6192 phrases; found: 0 phrases; correct: 0.
+2019-03-12 22:20:40,820:INFO: accuracy:  88.66%; precision:   0.00%; recall:   0.00%; FB1:   0.00
+2019-03-12 22:20:40,820:INFO: accuracy:  88.66%; precision:   0.00%; recall:   0.00%; FB1:   0.00
+2019-03-12 22:20:40,823:INFO: LOC: precision:   0.00%; recall:   0.00%; FB1:   0.00  0
+2019-03-12 22:20:40,823:INFO: LOC: precision:   0.00%; recall:   0.00%; FB1:   0.00  0
+2019-03-12 22:20:40,828:INFO: ORG: precision:   0.00%; recall:   0.00%; FB1:   0.00  0
+2019-03-12 22:20:40,828:INFO: ORG: precision:   0.00%; recall:   0.00%; FB1:   0.00  0
+2019-03-12 22:20:40,835:INFO: PER: precision:   0.00%; recall:   0.00%; FB1:   0.00  0
+2019-03-12 22:20:40,835:INFO: PER: precision:   0.00%; recall:   0.00%; FB1:   0.00  0
+2019-03-12 22:20:46,290:INFO: 2019-03-12 22:20:40 epoch 2, step 1, loss: 12.83, global_step: 793
+2019-03-12 22:20:46,290:INFO: 2019-03-12 22:20:40 epoch 2, step 1, loss: 12.83, global_step: 793
+2019-03-12 22:28:49,784:INFO: Namespace(CRF=True, batch_size=64, clip=5.0, demo_model='1550131589', dropout=0.5, embedding_dim=100, epoch=40, hidden_dim=300, lr=0.001, mode='train', optimizer='Adam', pretrain_embedding='pretrain', shuffle=True, test_data='data_path', train_data='data_path', update_embedding=False)
+2019-03-12 22:28:49,784:INFO: Namespace(CRF=True, batch_size=64, clip=5.0, demo_model='1550131589', dropout=0.5, embedding_dim=100, epoch=40, hidden_dim=300, lr=0.001, mode='train', optimizer='Adam', pretrain_embedding='pretrain', shuffle=True, test_data='data_path', train_data='data_path', update_embedding=False)
+2019-03-12 22:31:34,365:INFO: Namespace(CRF=True, batch_size=64, clip=5.0, demo_model='1550131589', dropout=0.5, embedding_dim=100, epoch=40, hidden_dim=300, lr=0.001, mode='train', optimizer='Adam', pretrain_embedding='pretrain', shuffle=True, test_data='data_path', train_data='data_path', update_embedding=False)
+2019-03-12 22:31:34,365:INFO: Namespace(CRF=True, batch_size=64, clip=5.0, demo_model='1550131589', dropout=0.5, embedding_dim=100, epoch=40, hidden_dim=300, lr=0.001, mode='train', optimizer='Adam', pretrain_embedding='pretrain', shuffle=True, test_data='data_path', train_data='data_path', update_embedding=False)
