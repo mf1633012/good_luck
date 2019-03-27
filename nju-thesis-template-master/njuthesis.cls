@@ -688,6 +688,14 @@
 \newcommand*{\confidentiallevel}{\njut@cap@nlc@confidentiallevel}
 \newcommand*{\clasifiedlevel}{\njut@cap@nlc@clasifiedlevel}
 \newcommand*{\mostconfidentiallevel}{\njut@cap@nlc@mostconfidentiallevel}
+
+
+%\newcommand*{\titlea}[1]{%
+%  \renewcommand{\njut@value@titlea}{#1}}
+%\newcommand*{\titleb}[1]{%
+%  \renewcommand{\njut@value@titleb}{#1}}
+
+
 \newcommand*{\udc}[1]{%
   \renewcommand*{\njut@value@nlc@udc}{#1}}
 \newcommand*{\nlctitlea}[1]{%
