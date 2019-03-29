@@ -16,6 +16,8 @@
 \usepackage{xcolor}
 \usepackage{algorithm}
 \usepackage{algorithmic}
+\usepackage{natbib}
+\usepackage{url}
 
 \lstset{breaklines}%这条命令可以让LaTeX自动将长的代码行换行排版
 \lstset{extendedchars=false}%这一条命令可以解决代码跨页时，章节标题，页眉等汉字不显示的问题
@@ -121,7 +123,7 @@
 % 设置论文的英文封面
 
 % 论文的英文标题，不可换行
-\englishtitle{\LaTeX \;  Research of Complex Chinese Named Entity Recognition Based on Deep Learning  }
+\englishtitle{Research of Complex Chinese Named Entity Recognition Based on Deep Learning  }
 % 论文作者姓名的拼音
 \englishauthor{Gu Yi}
 % 导师姓名职称的英文
@@ -181,13 +183,15 @@
 % 论文的中文摘要
 \begin{abstract}
 
-近年来互联网社交媒体经历了飞速地发展，在这个过程中产生了海量的自然语言数据，这些数据中蕴藏着巨大的价值。命名实体识别技术可以将关注的关键实体从文本数据中挖掘出来，是自然语言处理中最为基础重要的一环，具有相当大的应用价值。但是目前中文命名实体识别方法还存在着一些不足：（1）在目前较为流行的以字符为粒度的字符向量深度神经网络模型中，中文字符向量空间稀疏、信息量不足、含义混淆，制约着整个命名实体模型的性能。（2）嵌套命名实体、长文本、上下文错误关联等复杂命名实体问题影响着模型在应用中的效果，尤其是在当下网络文本数据的实际工程应用中，互联网数据规范性差、结构混淆，给命名实体识别工作带来了很大挑战。本文针对这些问题进行了一系列研究，主要工作包括以下几个方面：
+近年来互联网社交媒体经历了飞速地发展，在这个过程中产生了海量的自然语言数据，这些数据中蕴藏着巨大的价值。命名实体识别技术可以将关注的关键实体从文本数据中挖掘出来，是自然语言处理中最为基础重要的一环，具有相当大的应用价值。但是目前中文命名实体识别方法还存在着一些不足：（1）在目前较为流行的以字符为粒度的深度神经网络模型中，中文字符向量空间稀疏、信息量不足、含义混淆，制约着整个命名实体模型的性能。（2）嵌套命名实体、长文本、上下文错误关联等复杂命名实体问题影响着模型在应用中的效果，尤其是在当下网络文本数据的实际工程应用中，互联网数据规范性差、结构混淆，给命名实体识别工作带来了很大挑战。
+
+本文针对这些问题进行了一系列研究，主要工作包括以下几个方面：
 
 1）研究了命名实体识别技术的发展历程，比较了常见模型的优劣，论证了“字符向量分布式嵌入-双向长短时记忆网络-条件随机场”模型对于解决中文命名实体识别问题相比其他模型的优势，并对该模型加以实现。
 
-2）针对以字符为粒度的字符向量深度神经网络模型中，中文字符向量空间稀疏、信息量不足的问题，本文提出了一种改进的中文字符级特征表示方法。在空间表示方面，本文利用了中文构词造句的特征基于位置信息对中文字符向量的表示进行优化；在信息量扩充方面，本文利用主题模型框架构造出中文字符主题概率向量作为辅助特征，补充字符级特征表示中的全局信息。实验表明，本文改进的中文字符级特征表示方法相比于简单的word2vec训练出的字向量，提高了“字符向量分布式嵌入-双向长短时记忆网络-条件随机场”模型的效果。
+2）针对以字符为粒度的字符向量深度神经网络模型中，中文字符向量空间稀疏、信息量不足的问题，本文提出了一种改进的中文字符级特征表示方法。在空间表示方面，本文利用了中文构词造句的特征，基于位置信息对中文字符向量的表示进行优化；在信息量扩充方面，本文利用主题模型框架构造出中文字符主题概率向量作为辅助特征，补充字符级特征表示中的全局信息。实验表明，本文改进的中文字符级特征表示方法相比于基础的word2vec训练出的字向量，提高了整体命名实体识别模型的效果。
 
-3）针对复杂中文命名实体问题，本文分析了现实应用场景下影响中文命名实体识别效果的因素，提出了一个层叠的深度神经网络命名实体识别模型。该模型的低层网络通过改进损失函数和解码方法的手段对粗粒度的命名实体进行识别，尽量不遗漏潜在的命名实体信息；高层网络接受被低层网络分割后的文本，通过加入卷积层池化层的方法对命名实体边界精确识别，将最终结果作为命名实体识别系统的最终输出。实验表明该模型在标准数据集和真实网络文本数据下都取得了较好的效果。
+3）针对复杂中文命名实体问题，本文分析了现实应用场景下影响中文命名实体识别效果的因素，提出了一个层叠的深度神经网络命名实体识别模型。该模型的低层网络通过改进损失函数和解码方法，对粗粒度的命名实体进行识别，尽量不遗漏潜在的命名实体信息；高层网络接受被低层网络分割后的文本，通过加入卷积层池化层的方法对命名实体边界精确识别，将最终结果作为命名实体识别系统的最终输出。实验表明该模型在标准数据集和真实网络文本数据下都取得了较好的效果。
 
 
 % 中文关键词。关键词之间用中文全角分号隔开，末尾无标点符号。
@@ -197,11 +201,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 论文的英文摘要
 \begin{englishabstract}
-The rapid development of Internet social media has produced a huge amount of natural language data, which contains great value. Named entity recognition technology can extract key entities of interest from text data, which is the most important part of natural language processing and has considerable value in application. However, there are still some shortcomings in the Chinese named entity recognition method: (1) In the current popular deep neural network model using character-based distributed vector, the Chinese character vector space is sparse, the amount of information is insufficient, and the meaning is confused,, which restricts the performance of Chinese named entity recognition model.(2) The problem of complex named entities such as nested named entities, long texts, contextual errors, etc. affects the performance of the model in the application, especially in the actual engineering application of the current network text data, the Internet data is poorly standardized and structured. Confusion, creating challenges for named entity identification work. This article has conducted a series of studies on these issues, the main results include the following aspects:
+The rapid development of Internet social media has produced a huge amount of natural language data, which contains great value. Named entity recognition technology, as the most fundamental part of natural language processing, can excavate key entities from text data, and has considerable application value. However, some deficiencies remain in the current Chinese named entity recognition technology. Firstly, in the deep neural network model based on character-level embedding, which is popular today, sparse Chinese character vector space and insufficient information restrict the performance of the whole Chinese named entity recognition model. Secondly, some complex named entit problems such as nested named entities, long texts, and contextual errors negatively affect the performance of the model in application. Especially when we apply text data from Internet to practical projects, its poor standardization and confusing structures cause many challenges to named entity recognition. This paper conducts a series of studies on these issues, and the main conclusions include the following aspects.
+ 
+1) This paper researches into the development course of named entity recognition technology, and the advantages and disadvantages of commonly used models. Then the advantages of BiLSTM-CRF Model based on character-level embedding over other models in solving the problem of Chinese named entity recognition are demonstrated and the model has been implemented.
 
-1) This article study the history and development of named entity recognition technology. The advantages and disadvantages of common models are compared. The "character embedding-bidirectional long short-term memory neural network-conditional random field" model is proposed to solve the problem of Chinese named entity recognition. Then, this artical introduce the advantage over other models and implemente the model.
-
-2) For the character vector based neural network model, the Chinese character vector space is sparse and the amount of information is insufficient. This paper proposes an improved Chinese character level feature representation method. In terms of spatial representation, this paper uses the features of Chinese word formation to optimize the representation of Chinese character vectors based on position information. In terms of information volume, this paper supplements the global information with the Chinese character topic probability vector constructed by the topic model as assistant feature. Experiments show that the improved Chinese character-level feature representation method improves the recognition accuracy and recall rate in the Chinese named entity recognition problem compared with the basic word2vec trained word vector.
+2) In order to solve the problem of sparse Chinese character vector space and insufficient information in the deep neural network model based on character-level embedding, this paper proposes an improved method of Chinese character-level feature representation. In terms of spatial representation, this paper uses the features of Chinese word formation to optimize the representation of Chinese character vectors based on position information. In terms of information supplement, this paper uses the topic model framework to construct the probability vector of Chinese character topics as an auxiliary feature to supplement the global information in character-level feature representation. Experiments indicate that, compared to the simple character vectors trained by word2vec, the improved method of Chinese character-level feature representation polishes the performance of the BiLSTM-CRF Model based on character-level embedding.
 
 3) For the complex Chinese named entity problem, this paper analyzes the factors affecting the recognition effect of Chinese named entities in the application scenario, and proposes a cascaded deep neural network named entity recognition model. The low-level network of the model identifies coarse-grained named entities by modification of loss function and decoding method, and tries not to miss potential named entity information; the high-level network accepts the text segmented by the lower-layer network and joins the convolution layer and pooling layer to identify the named entity boundary more exactly. The model uses the final result of high-level network as the final output of the named entity recognition system. Experiments show that the model has achieved good results under both standard data sets and real network text data.
 
@@ -244,13 +248,13 @@ The rapid development of Internet social media has produced a huge amount of nat
 % 学位论文的正文应以《绪论》作为第一章
 \chapter{绪论}\label{chapter_introduction}
 \section{研究背景及意义}
-互联网自诞生于上个世纪以来，正一步一步地改变着地球上每个人的生活。特别是伴随移动通信技术的革新，结合互联网技术和移动通信技术的移动互联网正深刻地改变着生活的方方面面。饮食、购物、交通、居住、社交、娱乐等等情境在当下的移动互联时代都有了新的运作形态。随着移动互联技术的成熟和在“摩尔定律”下硬件成本的降低，人们越来越容易地融入互联网时代，根据中国互联网络信息中心发布的数据，截至2018年6月，我国网民规模已经超过了8亿，而其中移动互联网用户比例高达98\%。海量的用户在使用互联网时也正有意无意地创造着海量的数据，而海量的数据中蕴藏着巨大的价值。这些数据的类型包括数值型数据、文本型数据、图片型数据、视频型数据、音频型数据等，利用好这些不同类型的数据可以创造出大量的经济价值和社会价值。
+互联网自诞生于上个世纪以来，正一步一步地改变着地球上每个人的生活。特别是伴随着移动通信技术的革新，结合互联网技术和移动通信技术的移动互联网正深刻地改变着生活的方方面面。饮食、购物、交通、居住、社交、娱乐等等情境在当下的移动互联时代都有了新的运作形态。随着移动互联技术的成熟和“摩尔定律”下硬件成本的降低，人们越来越容易地融入互联网时代，根据中国互联网络信息中心发布的数据，截至2018年6月，我国网民规模已经超过了8亿，而其中移动互联网用户比例高达98\%。海量的用户在使用互联网时也正有意无意地创造着海量的数据，而海量的数据中蕴藏着巨大的价值。这些数据的类型包括数值型数据、文本型数据、图片型数据、视频型数据、音频型数据等，利用好这些不同类型的数据可以创造出大量的经济价值和社会价值。
 
 自然语言处理技术（Natural language processing）是计算机信息工程的一个子领域，目标是对海量文本数据处理分析，使得计算机程序可以利用词法、语法、语义等信息对自然语言文本完成识别、理解与输出等任务，例如词语分割、命名实体识别、关系抽取、机器翻译、自然语言生成、问答系统、情感分析等等。自然语言技术通过规则学习、统计学习等方法的探索与研究下日臻成熟。近十年，表示学习、深度神经网络类机器学习方法给自然语言处理技术带来了新的方向与发展，在部分自然语言处理问题上可以达到良好而稳定的结果。自然语言处理技术在各行各业有着多种应用：社交媒体上的评论文本数据可以用来辅助监测舆情舆论的走向；财经新闻中包含诸多经济数据、公司运营情况，利用这些文本数据可以辅助量化交易的执行；利用新闻媒体中的海量文本数据，可以对用户兴趣话题进行建模，高效地为读者进行内容过滤和兴趣推荐；机器翻译技术可以将不同语言为载体的文献自动翻译，促进不同文化间的沟通和交流；知识图谱技术可以链接不同的人和组织，构造知识库，服务与多种商业应用。
 
-命名实体识别（Named-entity recognition），又称实体抽取技术、实体分块技术，是自然语言处理技术的一个子问题。目标在于将非结构化文本中提及的命名实体抽取出来，例如人名，组织名，地点名，医疗术语法规术语，时间，数量，货币价值等等。例如在财经文章中需要准确地抽取企业名称、重要人物名称、货币价值等命名实体；在政治新闻中需要准确地抽取政治人物名称、国家地理名称、组织机构名称、事件名称等命名实体；在判决文书文本中，需要抽取出当事人名称、处罚条款、量刑情况、关联组织等信息。可以说，命名实体识别问题是自然语言处理最基础的任务之一，命名实体识别的准确率、召回率的高低直接影响着后续自然语言处理问题，例如信息抽取、文本分类、文本摘要、问答系统等等研究方向。
+命名实体识别（Named-entity recognition），又称实体抽取技术、实体分块技术，是自然语言处理技术的一个子问题。目标在于将非结构化文本中提及的命名实体抽取出来，包括人名，组织名，地点名，医疗术语、法规术语，时间，数量，货币价值等等。例如在财经文章中需要准确地抽取企业名称、重要人物名称、货币价值等命名实体；在政治新闻中需要准确地抽取政治人物名称、国家地理名称、组织机构名称、事件名称等命名实体；在判决文书文本中，需要抽取出当事人名称、处罚条款、量刑情况、关联组织等信息。可以说，命名实体识别问题是自然语言处理最基础的任务之一，命名实体识别的准确率、召回率的高低直接影响着后续自然语言处理问题，例如信息抽取、文本分类、文本摘要、问答系统等等研究方向。
 
-因而中文命名实体识别问题，对于中文自然语言处理技术的研究有着关键性的地位。通用命名实体技术对于中文命名实体识别有着不错的效果，然而中文与其他许多种语言的构词、语法有着诸多不同。特别是词语的边界模糊、无大小写和时态词型的变化、一词多性，一字多义、简称方法独特等等独特之处，因而相适应地根据中文语言的特点对通用命名实体技术进行优化有着很重要的意义。
+因而中文命名实体识别问题，对于中文自然语言处理技术的研究有着关键性的地位。通用命名实体技术对于中文命名实体识别有着不错的效果，然而中文与其他许多种语言的构词、语法有着诸多不同。特别是词语的边界模糊、无大小写和时态词型的变化、一字多性，一字多义、简称方法独特等等特殊之处，因而相适应地根据中文语言的特点对通用命名实体技术进行优化有着很重要的意义。
 
 
 
@@ -260,7 +264,7 @@ The rapid development of Internet social media has produced a huge amount of nat
 
 命名实体识别研究是一个较宽泛的领域，影响命名实体识别工作方法的有以下几个因素\cite{ASTUDY}：
 
-（1）语言因素。目前，大量的研究工作都是以英文为研究对象，但是这些方案并不一定可以推广到所有的语言。例如几个东亚文明的语言中文日文韩文并不像英文单词那样有着天然的空格作为隔断，而且也不存在字母的大小写，这些特性都会使得命名实体识别的方法上有着较大的差异。就算是同是西语概念下的法文德文西班牙文等也有自身语言的特殊性。除英文外目前中文日文法文意大利文希腊文也已经有了大量研究，整理富集出大量的语料和工具。针对印度文丹麦文韩文土耳其文等语言的研究也在一直的进步中。这些工作很多都是限定在自己的语言边界内，研究出一个跨语言跨文化的命名实体识别模型是该领域一个长远目标。
+（1）语言因素。目前，大量的研究工作都是以英文为研究对象，但是这些方案并不一定可以推广到所有的语言。例如几个东亚文明的语言中文、日文、韩文并不像英文单词那样有着天然的空格作为隔断，而且也不存在字母的大小写，这些特性都会使得命名实体识别的方法上有着较大的差异。就算是同是西语概念下的法文德文西班牙文等也有自身语言的特殊性。除英文外目前中文、日文、法文、意大利文、希腊文也已经有了大量研究，整理富集出大量的语料和工具。针对印度文、丹麦文、韩文、土耳其文等语言的研究也在一直的进步中。这些工作很多都是限定在自己的语言边界内，研究出一个跨语言跨文化的命名实体识别模型是该领域一个长远目标。
 
 （2）领域因素。最初命名实体识别的很多工作是面对半结构化的数据，例如病历、报名表、简历、申请材料这样的文本，这些工作有各自不同的特殊性方法中会使用很多先验知识，因而技术方法移植困难。除此之外，文本所属领域的不同对命名实体识别工作影响也很大，比如文本主题属于科学技术文章或是商业、体育、旅游等领域，这些不同的领域内容也会对最终命名实体识别的效果产生很大的影响。因此，最终一个效果良好稳定可靠的命名实体识别系统需要拥有尽可能多的不同领域的语料知识，找到并实时更新大量不同领域的语料库也是目前一个相当大的挑战。
 
@@ -277,20 +281,20 @@ The rapid development of Internet social media has produced a huge amount of nat
 
 经过多年的发展，基于统计学习的命名实体识别方法逐渐成熟。在各种语料数据集上表现最好的模型基本上是将命名实体识别任务建模成为序列标注任务，利用大规模的标注语料进行学习，对于句子中的每个单词进行标签的分类。McName和Mayfield\cite{McName}采用了1000个语言相关的特征和258个拼写和标点特征来训练SVM分类器，每个分类器将单词分类至8个类别标签实现命名实体识别。Isozaki和Kazawa\cite{Isozki}发明了一种使得SVM分类器在命名实体识别任务上训练更加快速的方法。Li\cite{Li}等提出了一种基于SVM模型利用不平坦分类超平面的命名实体识别方法，在一些数据集上有不错的表现。
 
-不过SVM方法的缺陷是并不包含单词的“邻居”信息，而这一信息在判断命名实体边界时十分重要。因为训练的语料中，相同的单词（汉语的字）在不同的语境中对应的标签常常不同，十分依赖上下文的信息。而HMM和CRF这样的概率图模型在这一任务上表现颇佳。McCallum和Li\cite{McCallum}提出了一个特征归纳方法通过CRF进行命名实体识别，在英文数据集CoNLL03上F值达到了84.04\%。何炎祥\cite{hyx}等提出的基于CRF和规则相结合的地理命名实体识别方法取得了不错的中文命名实体识别效果。张素香\cite{zsx}对于同样的中文语料对比了最大熵和条件随机场模型，得出了条件随机场模型的表现优于最大熵模型的结论。加入非局部特征，使用条件随机场模型进行命名实体识别成为了一种较为主流的方法。
+不过SVM方法的缺陷是并不包含单词的“邻居”信息，而这一信息在判断命名实体边界时十分重要。因为训练的语料中，相同的单词（汉语的字）在不同的语境中对应的标签常常不同，十分依赖上下文的信息。而HMM和CRF这样的概率图模型在这一任务上表现颇佳。McCallum和Li\cite{McCallum}提出了一个特征归纳方法通过CRF进行命名实体识别，在英文数据集CoNLL03上F值达到了84.04\%。何炎祥等\cite{hyx}提出的基于CRF和规则相结合的地理命名实体识别方法取得了不错的中文命名实体识别效果。张素香\cite{zsx}对于同样的中文语料对比了最大熵和条件随机场模型，得出了条件随机场模型的表现优于最大熵模型的结论。加入非局部特征，使用条件随机场模型进行命名实体识别成为了一种较为主流的方法。
 
 \subsection{深度学习方法研究发展现状}
-近年来深度神经网络模型在图像处理和语音识别任务上取得了巨大的成功，许多学者也迅速将这一模型引入到自然语言处理任务中来。2011年，Collobert\cite{Collobert}用神经网络模型来自动化命名实体识别任务中的特征抽取，从而减少特征工程的工作量。从此开始，神经网络在命名实体识别任务中的研究开始流行起来。
+近年来深度神经网络模型在图像处理和语音识别任务上取得了巨大的成功，许多学者也迅速将这一模型引入到自然语言处理任务中来。2011年，Collobert\cite{Collobert}用神经网络模型来自动化命名实体识别任务中的特征抽取，从而减少特征工程的工作量。从此开始，神经网络模型在命名实体识别任务中的研究开始流行起来。
 
 深度学习是机器学习的一个子领域，该类方法通过多层的抽象层来学习和表示数据。典型的层次结构是人工神经网络。这种方法采取端到端的机器学习概念，从原始数据中自动探索潜在的表示特征，并进行分类和识别。深度学习相比于传统机器学习方法有三个关键优点：（1）相较于线性模型，深度学习可以找到更多非线性的联系，表示能力更强。（2）传统方法的命名实体识别花了大量的工作和技巧在构造数据特征上，而深度学习方法自动从原始数据中学习有用的数据表示。（3）深度学习模型能够端到端地通过梯度下降求解，通过这个性质可以设计一些更加复杂的命名实体识别系统。
 
 在深度学习在自然语言处理和序列标注领域学者们做了一系列有成效的工作：
 
-1）输入的分布式表示：1、词语级别的表示\cite{Nguyen}，收集大量数据采用例如CBOW和skip-gram等无监督学习算法进行训练，得到预训练好的词语向量，作为命名实体识别模型的输入，常用的词语向量有Google的Word2Vec，Stanford的GloVe，Facebook的fastText等。Yao等\cite{Yao}利用这种表示方法提出了一个基于词语向量表示的生物医学命名实体识别系统，该系统采用总大小205924的词典，训练出维数为600的词向量交给深度神经网络学习；2、字符级别的表示，词语的粒度还可以继续细分\cite{Kuru}，对于中文等字词词素文字，还可以以单个字为粒度做分布式表示，对于英文等字母文字则可以使用有意义的单词子序列（比如前缀后缀等）作为要素做分布式表示。Ma等\cite{Ma}采用了一个卷积神经网络（CNN）模型来提取字母级别词语的表示。Yang等\cite{Yang}提出在神经网络卷积层设置一个固定大小窗口来提取字符级别的特征。Lample等\cite{Lample}采用了一个双向LSTM模型来抽取字符级分布式表示；3、混合分布式表示，除了词语级别和字符级别的表示外，还有很多工作利用了其他的信息。比如在基于深度学习的表示外联合基于特征的信息，合并这些表示一同放入神经网路的输入。Huang等\cite{Huang}构建了一个BiLSTM-CRF模型，共使用了四种类型的特征，分别是拼写特征，内容特征，词语向量和词典特征，他们的实验表明这些额外的特征可以提高标签的准确率。Strubell等\cite{Strubell}训练了100维的词语嵌入式表示和5维的单词形状向量（例如全字母大写，小写，首字母大写，包含大写字母）作为输入。还有很多混合型方法用到了情感、语义\cite{Jansson}等特征。
+1）输入的分布式表示：1、词语级别的表示，文献\cite{Nguyen}收集大量数据采用例如CBOW和skip-gram等无监督学习算法进行训练，得到预训练好的词语向量，作为命名实体识别模型的输入，常用的词语向量训练方法有Google的Word2Vec，Stanford的GloVe，Facebook的fastText等。Yao等\cite{Yao}利用这种表示方法提出了一个基于词语向量表示的生物医学命名实体识别系统，该系统采用总大小205924的词典，训练出维数为600的词向量交给深度神经网络学习；2、字符级别的表示，词语的粒度还可以继续细分\cite{Kuru}，对于中文等字词词素文字，还可以以单个字为粒度做分布式表示，对于英文等字母文字则可以使用有意义的单词子序列（比如前缀后缀等）作为要素做分布式表示。Ma等\cite{Ma}采用了一个卷积神经网络（CNN）模型来提取字母级别词语的表示。Yang等\cite{Yang}提出在神经网络卷积层设置一个固定大小窗口来提取字符级别的特征。Lample等\cite{Lample}采用了一个双向LSTM模型来抽取字符级分布式表示；3、混合分布式表示，除了词语级别和字符级别的表示外，还有很多工作利用了其他的信息。比如在基于深度学习的表示外联合基于特征的信息，合并这些表示一同放入神经网路的输入。Huang等\cite{Huang}构建了一个BiLSTM-CRF模型，共使用了四种类型的特征，分别是拼写特征，内容特征，词语向量和词典特征，他们的实验表明这些额外的特征可以提高标签的准确率。Strubell等\cite{Strubell}训练了100维的词语嵌入式表示和5维的单词形状向量（例如全字母大写，小写，首字母大写，包含大写字母）作为输入。还有很多混合型方法用到了情感、语义\cite{Jansson}等特征。
 
-2）上下文编码器结构：深度学习处理命名实体任务的第二个环节就是给上下文选取合适的编码器结构，最常用的模型是卷积神经网络（CNN）模型、循环神经网络（RNN）模型。Wu等\cite{Wu}使用卷积层来生成全局特征；Zhou等\cite{zhou}发现RNN模型中后来的词语对于最终句子表示的影响大于之前词语的影响；Strubell\cite{Strubell}等采用了迭代空洞卷积网络（ID-CNNs）来做命名实体识别，效果好于较传统CNN方法。RNN结构，包括它的变体GRU、和LSTM，被证明在序列数据上有着很好的表现。特别是双向RNNs\cite{Huang}即利用了过去的信息和状态也可以利用未来的信息和状态，效果良好。这样的双向结构已经成为一个经典标准被广泛使用。Katiyar和Cardie\cite{Katiyar}提出了一个针对标准LSTM结构的修改来应对嵌套命名实体识别问题。Ju等\cite{Ju}提出一个动态栈来识别嵌套命名实体识别，对于探测出的实体进行下一步的嵌套命名实体识别。
+2）上下文编码器结构：深度学习处理命名实体任务的第二个环节就是给上下文选取合适的编码器结构，最常用的模型是卷积神经网络（CNN）模型和循环神经网络（RNN）模型。Wu等\cite{Wu}使用卷积层来生成全局特征；Zhou等\cite{zhou}发现RNN模型中后来的词语对于最终句子表示的影响大于之前词语的影响；Strubell\cite{Strubell}等采用了迭代空洞卷积网络（ID-CNNs）来做命名实体识别，效果好于较传统CNN方法。RNN结构，包括它的变体GRU、和LSTM，被证明在序列数据上有着很好的表现。特别是双向RNNs\cite{Huang}即利用了过去的信息和状态也可以利用未来的信息和状态，效果良好。这样的双向结构已经成为一个经典标准被广泛使用。Katiyar和Cardie\cite{Katiyar}提出了一个针对标准LSTM结构的修改来应对嵌套命名实体识别问题。Ju等\cite{Ju}提出一个动态栈来识别嵌套命名实体识别，对于探测出的实体进行下一步的嵌套命名实体识别。
 
-3）标签解码结构：标签解码是命名实体识别模型的最后一个环节。这个过程是要将编码器输出的文本表示为输入，最终得出一系列命名实体标签关联到输入序列。主要采用的方法有以下几种，多层感知机和Softmax层输出\cite{Strubell}、条件随机场\cite{Huang}、循环神经网络\cite{Shen}几种。多层感知机是将问题建模为一个多分类问题，每一个标签独立预测，没有参考周边“邻居”信息。条件随机场解码方法是最常用的解码方法，在CoNLL03数据集上有目前最好的结果\cite{Akbik}。循环神经网络解码方法的优点是\cite{Shen}当命名实体类别较多时，解码的速度较快，因为条件随机场的解码方法采用动态规划思想的维特比算法，在类别多时解码时间较长。
+3）标签解码结构：标签解码是命名实体识别模型的最后一个环节。这个过程是要将编码器输出的文本表示为输入，最终得出一系列命名实体标签关联到输入序列。主要采用的方法有以下几种，多层感知机和Softmax层输出\cite{Strubell}、条件随机场\cite{Huang}、循环神经网络\cite{Shen}几种。多层感知机是将问题建模为一个多分类问题，每一个标签独立预测，没有参考周边“邻居”信息。条件随机场解码方法是最常用的解码方法，在CoNLL03数据集上有目前最好的结果\cite{Akbik}。循环神经网络解码方法的优点是当命名实体类别较多时，解码的速度较快\cite{Shen}，因为条件随机场的解码方法采用动态规划思想的维特比算法，在类别多时解码时间较长。
 
 总而言之，用深度学习方法解决命名实体识别问题，RNNs结构和CRF解码器的组合是现今使用最广泛的模型。尤其是BiLSTM-CRF结构是采用深度学习进行命名实体识别最常见的结构。而模型成功的关键也很依赖于输入的表示方法。
 
@@ -312,13 +316,13 @@ The rapid development of Internet social media has produced a huge amount of nat
 3）在优化网络结构方面：针对复杂中文命名实体长度长、标签含义混淆、上下文错误关联、实体相互嵌套等问题，本文提出了一个层叠深度神经网络模型，低层模型在优化损失函数和解码方法的手段下识别粗粒度的命名实体，尽量不丢失潜在命名实体的信息。高层模型接受低层模型的输入，在网络结构中加入卷积池化层，加强对命名实体边界的识别能力，识别出的命名实体作为结果输出。这样的模型经实验证明提高了中文命名实体识别系统在工程应用中的效果。
 
 \section{论文的组织结构}
-第1章：绪论。介绍研究的背景及意义，梳理命名实体识别问题的定义和研究子方向，介绍了传统方法和深度学习的研究发展和研究现状。探讨了目前中文命名实体识别的困难和挑战，介绍了本文的工作以及论文的内容安排。
+第1章：绪论。介绍研究的背景及意义，梳理命名实体识别问题的定义和研究子方向。介绍了传统方法和深度学习的研究发展和研究现状，探讨了目前中文命名实体识别的困难和挑战，介绍了本文的工作以及论文的内容安排。
 
-第2章：相关技术介绍。首先介绍了对命名实体识别问题的建模方法，之后对于本文涉及的相关技术一一介绍，包括条件随机场模型，词向量技术、深度神经网络技术、概率隐语义分析技术等。
+第2章：相关技术介绍。首先介绍了对命名实体识别问题的建模方法，之后对于本文涉及的相关技术一一介绍，包括条件随机场模型，词向量技术、深度神经网络技术、主题模型技术等。
 
 第3章：改进的中文字符级特征表示方法。提出了中文字符级分布式表示的改进方法，即基于位置信息的字符向量优化方法和基于主题信息的字符向量构造方法。结合这两个优化方法提出了一种改进的中文字符级特征表示方法。实验结果表明这种方法比直接嵌入word2vec训练的字符向量在中文命名实体识别任务中有更好的表现。
 
-第4章:面向复杂命名实体识别的层次深度神经网络模型。针对复杂中文命名实体，提出了一种多层次深度神经网络模型，该模型上层网络提取粗粒度的实体，下层网络提取准确实体，实验表明该模型对于复杂型命名实体有较好的表现。
+第4章:面向复杂命名实体识别的层叠深度神经网络模型。针对复杂中文命名实体，提出了一种多层次深度神经网络模型，该模型低层网络提取粗粒度的实体，高层网络对实体边界精确识别，实验表明该模型对于复杂型命名实体有较好的表现。
 
 第5章：总结与展望。对本工作做出总结，指出目前工作不完善的方面，提出之后改进的方向。
 
@@ -332,7 +336,7 @@ The rapid development of Internet social media has produced a huge amount of nat
 本章下面的章节结构如下：2.2节介绍命名实体识别问题如何建模成序列标注模型，介绍标签体系；2.3节介绍条件随机场模型；2.4节介绍词向量技术；2.5节介绍深度神经网络模型，需要是循环神经网络及其变体；2.6节介绍概率隐语义分析技术；2.7节是本章小结。
 
 \section{命名实体识别问题建模}
-命名实体识别是自然语言处理中的一项很基础的任务，是指从文本中识别出特定命名指向的词，比如人名、地名和组织机构名等。目前最常用，最成功的建模方法是将这一问题建模成序列标注问题。即对于输入序列$\mathrm { X } = \left( x _ { 1 } , x _ { 2 } , x _ { 3 } , \dots , x _ { n } \right)$,给出对应标签序列$\mathrm { Y } = \left( y _ { 1 } , y _ { 2 } , y _ { 3 } , \dots , y _ { n } \right)$。标签体系是两类标签的组合，一类标签是命名实体所属的类别，最常用的有人名实体（PER），地名实体（LOC），组织名实体（ORG），一类是该词在命名实体的位置信息。位置信息常用的标准有BIO标注体系和BIOE标注体系。BIO标注体系即将标签分为非命名实体（O），命名实体开头（B），命名实体内部（I）三类，而BIOE标注体系中多了一种标注类型，即命名实体结尾（E）。命名实体的标签就是将类别标签和位置标签组合，一个典型的识别人名、地名、组织名的BIO标签体系共有7个类别标签，如图2-1所示。
+命名实体识别是自然语言处理中的一项很基础的任务，是指从文本中识别出特定命名指向的词，比如人名、地名和组织机构名等。目前最常用，最成功的建模方法是将这一问题建模成序列标注问题。即对于输入序列$\mathrm { X } = \left( x _ { 1 } , x _ { 2 } , x _ { 3 } , \dots , x _ { n } \right)$,给出对应标签序列$\mathrm { Y } = \left( y _ { 1 } , y _ { 2 } , y _ { 3 } , \dots , y _ { n } \right)$。标签体系是两类标签的组合，一类标签是命名实体所属的类别，最常用的有人名实体（PER），地名实体（LOC），组织名实体（ORG），一类是该词在命名实体的位置信息。位置信息最常用的标准有BIO标注体系和BIOES标注体系。BIO标注体系即将标签分为非命名实体（O），命名实体开头（B），命名实体内部（I）三类，而BIOES标注体系中多了两种标注类型，即命名实体结尾（E）和单个实体（S）。命名实体的标签就是将类别标签和位置标签组合，一个典型的识别人名、地名、组织名的BIO标签体系共有7个类别标签，如图2-1所示。
 
 \begin{table}[ht]
 \centering
@@ -352,9 +356,7 @@ O&非命名实体\\
 \caption{BIO命名实体标签体系}
 \end{table}
 
-在序列标注建模方法和BIO标注体系下，对于中文文本的命名实体识别模型就是要为序列中的每个单元预测出所属的标签类别。输入一个字符串：“金正恩与特朗普将在越南首都河内会晤。”
-
-以字为单位的标注结果应该是：
+在序列标注建模方法和BIO标注体系下，对于中文文本的命名实体识别模型就是要为序列中的每个单元预测出所属的标签类别。输入一个字符串：“金正恩与特朗普将在越南首都河内会晤。”以字为单位的标注结果应该是：
 
 金\textbackslash PER-B 正\textbackslash PER-I 恩\textbackslash PER-I 与\textbackslash O 特\textbackslash PER-B 朗\textbackslash PER-I 普\textbackslash PER-I 将\textbackslash O 在\textbackslash O 越\textbackslash LOC-B 南\textbackslash LOC-I 首\textbackslash O 都\textbackslash O 河\textbackslash LOC-B 内\textbackslash LOC-I 会\textbackslash O 晤\textbackslash O 。\textbackslash O
 
@@ -364,23 +366,25 @@ O&非命名实体\\
 
 从上面的例子也很容易看出分词的效果将很大的影响以词语为单位的命名实体识别方法的效果。一个显而易见的例子是“南京市长江大桥”，被正确分词为“南京市\textbackslash 长江\textbackslash 大桥”就很容易正确的识别出字符串中的命名实体，而如果分词结果是“南京\textbackslash 市长\textbackslash 江\textbackslash 大桥”就不可能正确的识别出长江大桥这样的命名实体。因而对于中文而言，命名实体识别任务更常用、更具研究价值和潜力的方法应该是以字为单位的标注方案。
 
-目前较成熟先进的命名实体识别模型是面向字符级的分布式表示，再经由深度神经网络模型训练，提取特征，最终通过条件随机场模型预测每个字符所属类别。这种方法也是本文工作的基础，接下来将对这些涉及到的模型方法和本文用到的其他技术方法进行简要的介绍。
+本文的工作是针对中文命名实体识别问题，以字符为粒度进行序列学习。BIO标注体系已经可以很好的满足我们的要求，本文后续有标注的数据集都采用的是BIO标注体系。
+
+目前较成熟先进的中文命名实体识别模型是面向字符级的分布式表示，再经由深度神经网络模型训练，提取特征，最终通过条件随机场模型预测每个字符所属类别。这种方法也是本文工作的基础，接下来将对这些涉及到的模型方法和本文用到的其他技术方法进行简要的介绍。
 
 \section{条件随机场}
-条件随机场模型用于解决给定一组输入的随机变量的情况下，预测另一组输出随机变量的条件分布模型，该模型的前提假设是随机变量构成马尔科夫随机场。线性链条件随机场由Lafferty等人\cite{Lafferty}与2011年提出，线性链条件随机场模型是目前解决序列标注问题的最为经典的方法。具体来说，若$\mathrm { X } = \left\{ x _ { 1 } , x _ { 2 } , \cdots x _ { n } \right\}$为观测序列，$\mathrm { Y } = \left\{ y _ { 1 } , y _ { 2 } , \quad \cdots y _ { n } \right\}$为与观测序列一一对应的标注序列，而条件随机场模型就是要构建两者之间的条件概率$\mathrm { P } ( \mathrm { X } | \mathrm { Y } )$。
+条件随机场模型用于解决给定一组输入的随机变量的情况下，预测另一组输出随机变量的条件分布模型，该模型的前提假设是随机变量构成马尔科夫随机场。线性链条件随机场由Lafferty等人\cite{Lafferty}与2011年提出，线性链条件随机场模型是目前解决序列标注问题的最为经典的方法。具体来说，若$\mathrm { X } = \left\{ x _ { 1 } , x _ { 2 } , \cdots x _ { n } \right\}$为观测序列，$\mathrm { Y } = \left\{ y _ { 1 } , y _ { 2 } , \quad \cdots y _ { n } \right\}$为与观测序列一一对应的标注序列，而条件随机场模型就是要构建两者之间的条件概率$\mathrm { P } ( \mathrm { X } | \mathrm { Y } )$，如图\ref{crf}。
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.45\textwidth]{./figure/线性链条件随机场.jpg}
+\caption{线性链条件随机场}
+\label{crf}
+\end{figure}
 
 条件随机场属于概率图模型中的概率无向图模型，即有联合概率分布$\mathrm { P } (\mathrm { Y } )$，由无向图$G = ( V , E )$表示，其中图G的节点集合V表示Y的一系列随机变量，而边的集合E表示随机变量之间的依赖关系。如果联合概率分布$\mathrm { P } (\mathrm { Y } )$满足成对、局部或全局马尔可夫性（这三者等价，即对于图中每一个随机变量而言，在给定图中点与其不相邻的随机变量的条件下，和于其相邻的随机变量相互条件独立），则称这个联合概率为概率无向图模型，即条件随机场。概率无向图模型最大的特性就是联合概率便于因子分解，通过最大团上的势函数可以方便地将联合概率分解为概率相乘的形式，便于概率的计算。
 
 线性链条件随机场是条件随机场在链式结构上的表示。假设X和Y有相同的结构并构成如下图所示的线性链结构，设$X = \left( X _ { 1 } , X _ { 2 } , \cdots , X _ { n } \right)$，$Y = \left( Y _ { 1 } , Y _ { 2 } , \cdots , Y _ { n } \right)$均为线性链标识的随机变量序列，若在给定随机变量序列X的条件下，随机变量序列Y的条件概率分布$P ( Y | X )$满足马尔可夫性，$P \left( Y _ { i } | X , Y _ { 1 } , \cdots , Y _ { i - 1 } , Y _ { i + 1 } , \cdots , Y _ { n } \right) = P \left( Y _ { i } | X , Y _ { i - 1 } , Y _ { i + 1 } \right)$，$i = 1,2 , \cdots , n$，也就是概率$P (Y_{i}|X)$只与序列X以及前后两个标签相关。则称$P ( Y | X )$为线性条件随机场。该模型是解决序列标注问题的经典模型，因为该模型充分考虑了$X _ { i }$对应的标签$Y _ { i }$与前后文标注的关系。
 
-\begin{figure}[ht]
-\centering
-\begin{minipage}[t]{0.5\textwidth}
-\includegraphics[width=0.9\textwidth]{./figure/线性链条件随机场.jpg}
-\caption{线性链条件随机场}
-\label{lab:1}
-\end{minipage}
-\end{figure}
+
 
 条件随机场实际上是定义在时序数据上的对数线性模型，具有表达长距离依赖性和交叠性特征的能力，能够较好地解决标注偏置等问题。很多工作都说明该模型对于命名实体识别技术有着很好的帮助\cite{Settles}。
 
@@ -395,26 +399,24 @@ O&非命名实体\\
 
 显然向量的维数是词语的总数，这样的表示方法简单易于理解，但是浪费极大的空间，而且并不能表现出词语与词语之间的关联，存在着“词语鸿沟”问题。将单词表示为较低维度的向量的技术起源于20世纪60年代信息检索向量空间模型的发展。使用奇异值分解减少维度的数量，然后在20世纪80年代后起引入了潜在语义分析（LSA）方法。2000年Bengio等\cite{Bengio}在一些列论文中提出了神经概率语言模型，通过学习单词的分布式表示来降低上下文中单词表示的高维性。该领域在2010年后逐渐真正发展成为一种热门的方法，一个重要的原因是在那时向量训练的质量和速度方面取得了重要的进展。许多研究组开始在单词嵌入方法研究上投入更多精力。2013年，由Tomas Mikolov领导的谷歌团队创造了Word2Vec这样一个单词嵌入工具包\cite{word2vec}，相较于之前的方法，该模型可以更快地训练出向量空间模型。现今绝大多数新的单词嵌入技术都是基于神经网络架构，而不是传统的n-gram模型和无监督学习。
 
-训练word2vec有两种经典的模式CBOW和Skip-gram模型。
+训练word2vec有两种经典的模式CBOW模型和Skip-gram模型（见图\ref{cbow-skip}）。
 
-（1）CBOW
+\begin{figure}[h]
+\centering
+\includegraphics[width=	1\textwidth]{./figure/CBOW模型.jpg}
+\caption{CBOW模型与Skip-gram模型}
+\label{cbow-skip}
+\end{figure}
+
+（1）CBOW模型
 
 CBOW模型训练的方法是通当前词语的上下文词语来预测该词的向量。因而CBOW（Continuous Bag-of-Words）的输入是当前词上下文的词向量，输出就是当前词的词向量。比如下面这句话，“国家主席/习近平/在/进博会/上/宣布/设立/科创板/，并/于/板块/内/进行/注册制/试点/。”上下文窗口取值为6的话，特定词为“科创板”，即需要求出“科创板”的词向量，前后各有6个词共12个，这12个词是CBOW模型的输入，在最基本的CBOW模型中，采用的是词袋模式，即这12个词的权重一致，并不考虑每个词和目标词的距离。
 
 CBOW模型的网络结构如下图所示，在CBOW模型中输入的是12个词向量，输出的是所有词的softmax概率，损失函数是期望特定词对应的softmax概率最大。对应的CBOW模型输入层是12个神经元，输出层的个数和词汇表的总大小一致，有词汇表大小个神经元。隐藏层的神经元个数可以自行设定，对于神经网络的求解通过经典的反向传播算法求解，迭代完所有语料便可以求解出所有词汇表中的词向量。
 
-（2）Skip-gram
+（2）Skip-gram模型
 
 Skip-gram模型与CBOW模型相反，Skip-gram是输入特定的一个词向量，反而输出的是上下文的词向量，例如上文的例子的话输出的就是上下文12个词的词向量，同样用反向传播算法，投影层即为词语到指定维数向量空间的映射。两种方法比较而言，Skip-gram方法中邻近上下文单词的权重大于较远上下文单词的权重\cite{Mikolov1}，CBOW方法速度较快，Skip-gram方法速度较慢，但对不常见的单词效果更好，被更多地采用。
-
-\begin{figure}[H]
-\centering
-\begin{minipage}[t]{1\textwidth}
-\includegraphics[width=	1\textwidth,height=8.0cm]{./figure/CBOW模型.jpg}
-\caption{CBOW模型与Skip-gram模型}
-\label{lab:1}
-\end{minipage}
-\end{figure}
 
 word2vec有许多重要的参数直接决定了训练的效果。上下文窗口大小决定了给定单词前后包含多少个单词作为上下文训练单词，在原始的word2vec模型中窗口内各个单词的权重一致，也有一些研究加权词向量的训练方法\cite{myh}来提高词向量的质量。维度也是影响词向量的因素之一，研究表明嵌入词的质量随着维数的增加而提高，但达到某一点后，边际效益将减少\cite{Mikolov}。
 在word2vec模型实际运作中，为了解决词汇表太大，训练时间太长的问题，哈会使用霍夫曼树等方法优化训练过程，节省训练的时间。半采样也是实际word2vec训练中常用的优化方法，因为高频词通常提供的信息很少，频率高于设定阈值的单词会被降采样来提高训练的速度和质量。
@@ -423,42 +425,37 @@ word2vec有许多重要的参数直接决定了训练的效果。上下文窗口
 
 \subsection{循环神经网络概述}
 
-深度学习（Deep Learning）是基于学习数据表示的更广泛的一类机器学习方法，深度神经网络是深度学习中最重要，应用最广的模型。深度神经网络体系结构已被应用于计算机视觉、语音识别、自然语言处理、音频识别、机器翻译、生物信息学、药物设计、医学图像分析等领域。循环神经网络（Recurrent Neural Network）是人工神经网络（Artificial Neural Network）中的一类，这类网络善于预测序列信息。常用于分析时间序列数据，例如股票价格；在自动驾驶中可以预测汽车的行驶轨迹，避免事故。总的来说这样的网络可以输入文本、句子、语音等，应用到机器翻译、语音识别、语义分析等任务中。
-
-\begin{figure}[ht]
-\centering
-\begin{minipage}[t]{1\textwidth}
-\centering
-\includegraphics[width=0.8\textwidth]{./figure/RNN.jpg}
-\caption{单层RNN模型}
-\label{lab:1}
-\end{minipage}
-\end{figure}
-
-不同于前馈神经网络，循环神经网络激活方向不仅仅只向一个方向流动。最简单的RNN，只由一个神经元接受输入产生输出，然后将输出发回自身，如图2-3所示。每个时间步骤t，每个神经都从上个时间步骤$y _ { ( t - 1 ) }$接收输入向量x和输出向量。
-
-由于在时间步骤t时刻循环回去的信息是上一个时刻的信息，这种网络结构使得输入可以是以前的时间步骤，因而在某种意义上RNN是一种具有“记忆”的神经网络结构。单个神经元在时间步骤间保持某种状态，成为记忆单元。单个循环神经元或是一层循环神经元是一个基本结构，有更多复杂的网络结构是以这样的基本结构堆叠出来的。RNN可以同时接受一些列输入并同时产生一系列输出。这样的类型的网络在处理序列数据上有着非常好的表现，可以用于预测时间序列等任务。
-
-\begin{figure}[ht]
-\centering
-\begin{minipage}[t]{1\textwidth}
-\includegraphics[width=1\textwidth]{./figure/一层RNN.jpg}
-\caption{一层RNN模型}
-\label{lab:1}
-\end{minipage}
-\end{figure}
-
-\subsection{长短期记忆网络}
-
-长短时记忆网络（Long Short Term Memory Network，LSTM）是由Sepp Hochreit和Jurgen Schmidhuber在1997年提出\cite{Hochreit}，并在多个领域任务上表现优异。在语音识别技术、连续手写识别领域都曾创造当时的最佳纪录。2014年后，在深度神经网络模型中受到了广泛的应用，如果将LSTM单元视为一个黑盒，那么它可以非常像一个神经元基本单元，并且整个循环神经网络的性能会更好，训练收敛也更加容易，更重要的是这种结构可以检测数据中的中长期依赖性。如果不看LSTM单元内的结构的话，LSTM单元看起来和一个普通单元一样，知识它的状态被分成两个向量:${ h } _ { ( t ) }$和$ { c } _ { ( t ) }$，可以将${ h } _ { ( t ) }$看做短期状态，${ c } _ { ( t ) }$看作长期状态。LSTM单元的结构如图所示。
+深度学习（Deep Learning）是基于学习数据表示的更广泛的一类机器学习方法，深度神经网络是深度学习中最重要，应用最广的模型。深度神经网络体系结构已被应用于计算机视觉、语音识别、自然语言处理、音频识别、机器翻译、生物信息学、药物设计、医学图像分析等领域。循环神经网络（Recurrent Neural Network，RNN）是人工神经网络（Artificial Neural Network）中的一类，这类网络善于预测序列信息。常用于分析时间序列数据，例如股票价格；在自动驾驶中可以预测汽车的行驶轨迹，避免事故。总的来说这样的网络可以输入文本、句子、语音等，应用到机器翻译、语音识别、语义分析等任务中。
 
 \begin{figure}[h]
 \centering
-\begin{minipage}[t]{\textwidth}
-\includegraphics[width=1.0\textwidth,height=7.2cm]{./figure/LSTM.jpg}
+\includegraphics[width=0.77\textwidth]{./figure/RNN.jpg}
+\caption{单个RNN模型}
+\label{one-level-rnn}
+\end{figure}
+
+不同于前馈神经网络，循环神经网络激活方向不仅仅只向一个方向流动。最简单的RNN，只由一个神经元接受输入产生输出，然后将输出发回自身，如图\ref{one-level-rnn}所示。每个时间步骤t，每个神经都从上个时间步骤$y _ { ( t - 1 ) }$接收输入向量x和输出向量。
+
+由于在时间步骤t时刻循环回去的信息是上一个时刻的信息，这种网络结构使得输入可以是以前的时间步骤，因而在某种意义上RNN是一种具有“记忆”的神经网络结构。单个神经元在时间步骤间保持某种状态，成为记忆单元。单个循环神经元或是一层循环神经元是一个基本结构，有更多复杂的网络结构是以这样的基本结构堆叠出来的。RNN可以同时接受一些列输入并同时产生一系列输出。这样的类型的网络在处理序列数据上有着非常好的表现，可以用于预测时间序列等任务。
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1\textwidth]{./figure/一层RNN.jpg}
+\caption{一层RNN模型}
+\label{a-layer-rnn}
+\end{figure}
+
+一层RNN模型按时间展开如图\ref{a-layer-rnn}所示，当一个输入序列送入RNN网络进行训练时，$X_{(0)}$时刻的信息可以被传递到$X_{(1)}$在网络的训练过程，这是前馈神经网络所不具备的性质。也就是说在训练当前网络时，输入序列之前的内容仍然会被考虑到，因而RNN模型对于时序序列数据具有很强的处理能力。
+
+\subsection{长短期记忆网络}
+
+长短时记忆网络（Long Short Term Memory Network，LSTM）是由Sepp Hochreit和Jurgen Schmidhuber在1997年提出\cite{Hochreit}，并在多个领域任务上表现优异。在语音识别技术、连续手写识别领域都曾创造当时的最佳纪录。2014年后，在深度神经网络模型中受到了广泛的应用，如果将LSTM单元视为一个黑盒，那么它可以非常像一个神经元基本单元，并且整个循环神经网络的性能会更好，训练收敛也更加容易，更重要的是这种结构可以检测数据中的中长期依赖性。如果不看LSTM单元内的结构的话，LSTM单元看起来和一个普通单元一样，知识它的状态被分成两个向量:${ h } _ { ( t ) }$和$ { c } _ { ( t ) }$，可以将${ h } _ { ( t ) }$看做短期状态，${ c } _ { ( t ) }$看作长期状态。LSTM单元的结构如图\ref{lstm}。
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.6\textwidth]{./figure/LSTM.jpg}
 \caption{LSTM单元}
-\label{lab:1}
-\end{minipage}
+\label{lstm}
 \end{figure}
 
 长短时记忆网络的思路很简单，相较原始RNN结构比，原始RNN隐藏层只有一个状态h，这个状态对短期的输入敏感而对长期的输入不敏感。因而LSTM单元中，增加一个状态c，用这个状态来保存长期状态。LSTM有能力向单元状态中添加或是丢失信息，通过结构来管理，这种结构称为门限。LSTM关键思想是让网络可以学习长期状态下选择性地存储的内容、丢弃内容以及从中读取内容。当长期状态${ c } _ { ( t ) }$从左向右穿越网络时，可以看到数据流首先通过一个起始门，丢弃一些记忆，然后通过加法运算（添加由输入门选择的记忆）添加一些新的内存，最终${ c } _ { ( t ) }$不做更多的转换被直接发送出去。因而在这个模型中，在每一个时间步，一些记忆被丢弃，一些记忆被添加进来。除此以外，${ h } _ { ( t ) }$在执行了第二步操作后，对长期状态进行复制并通过tanh函数传递，然后通过输出门对结果进行过滤。这就产生了短期状态（相当于在这一个单元步骤中的输出）。
@@ -473,32 +470,25 @@ LSTM的训练方法也可以采用梯度下降法来最小化训练误差，一�
 
 潜语义分析（LSA）是一种对文档主题进行建模的方法，通过产生一组与文档和词语相关的概念来分析文档与其包含的词语之间的关系。LSA假设意义相近的单词出现在相似的文本片段中，通过语料集构建包含每个段落的词语的矩阵（行代表一个唯一的单词，列代表每个文档或段落），使用奇异值分解（SVD）技术来减少行数，同时可以保持列之间的相似性结构。取任意两行形成的两个向量之间的角度余弦来比较单词。接近1的值表示非常相似的单词，而接近0的值表示非常不同的单词。用任意两列向量之间角度的余弦来比较文档，接近1的值表示非常相似的文档，而接近0的值表示非常不同的文档。
 
-\begin{figure}[ht]
-\centering
-\begin{minipage}[t]{\textwidth}
+\begin{figure}[h]
 \centering
 \includegraphics[width=1\textwidth]{./figure/LSA.jpg}
 \caption{LSA模型}
-\label{lab:1}
-\end{minipage}
+\label{lsa}
 \end{figure}
 
-$$X = U D V ^ { T }$$
 
-LSA模型如图所示，矩阵U中的每一行表示每个词在每个词类（主题）的值，每一列表示语义相近的词类，每行中的值表示每个词语在这个语义类中的重要程度。LSA可以刻画同义词，因为词语相近的词对应着相同或相似的主题，SVD的降维方法也可以去除部分噪声，使得特征鲁棒性更好。但是LSA无法处理一词多义的问题，LSA将每个词映射到了潜语义空间中的一个点，即一个词对应的多个含义没有被区分。并且LSA的概率模型，是以文档和词的分布服从联合正态分布为前提假设的，但这个假设往往准确性不高。
+LSA模型如图\ref{lsa}，其中$X = U D V ^ { T }$。矩阵$U$中的每一行表示每个词在每个词类（主题）的值，每一列表示语义相近的词类，每行中的值表示每个词语在这个语义类中的重要程度。LSA可以刻画同义词，因为词语相近的词对应着相同或相似的主题，SVD的降维方法也可以去除部分噪声，使得特征鲁棒性更好。但是LSA无法处理一词多义的问题，LSA将每个词映射到了潜语义空间中的一个点，即一个词对应的多个含义没有被区分。并且LSA的概率模型，是以文档和词的分布服从联合正态分布为前提假设的，但这个假设往往准确性不高。
 
 \subsection{概率潜语义分析}
 
-概率潜语义分析（PLSA）是根据观察到的变量与某些隐藏变量的相似性从而得出它们的低维表示，这种技术是潜语义分析技术的一个改进版本。与LSA是利用线性代数方法进行降维不同的是，PLSA是基于估计一个概率模型参数达到降维效果。PLSA模型将文档中的词看作来自混合模型的采样，假设每个词来自一个主题，同一个文档中不同词可能来自不同的主题。再将文档表示为多个主题的混合，每个主题具有不同的概率，每个主题又由多个词构成。
+概率潜语义分析（PLSA）是根据观察到的变量与某些隐藏变量的相似性从而得出它们的低维表示，这种技术是潜语义分析技术的一个改进版本。与LSA是利用线性代数方法进行降维不同的是，PLSA是基于估计一个概率模型参数达到降维效果。PLSA模型将文档中的词看作来自混合模型的采样，假设每个词来自一个主题，同一个文档中不同词可能来自不同的主题。再将文档表示为多个主题的混合，每个主题具有不同的概率，每个主题又由多个词构成。PLSA参数结构图如图\ref{plsa}
 
 \begin{figure}[h]
 \centering
-\begin{minipage}[t]{1\textwidth}
-\centering
-\includegraphics[width=0.7\textwidth]{./figure/PLSA.jpg}
+\includegraphics[width=0.6\textwidth]{./figure/PLSA.jpg}
 \caption{PLSA模型}
-\label{lab:1}
-\end{minipage}
+\label{plsa}
 \end{figure}
 $$P ( w , d ) = \sum _ { c } P ( c ) P ( d | c ) P ( w | c ) = P ( d ) \sum _ { c } P ( c | d ) P ( w | c )$$
 
@@ -514,15 +504,12 @@ PLSA对参数的求解通过EM算法进行学习。PLSA像比如LSA可以较好�
 
 \begin{figure}[h]
 \centering
-\begin{minipage}[t]{\textwidth}
-\centering
-\includegraphics[width=0.8\textwidth]{./figure/lda.jpg}
+\includegraphics[width=0.6\textwidth]{./figure/lda.jpg}
 \caption{LDA模型}
-\label{lab:1}
-\end{minipage}
+\label{lda}
 \end{figure}
 
-PLSA模型和LDA模型在建立文档和主题间的概率模型和建立主题与词的概率模型时都采用了多项式分布，为了计算的简便性并且让先验更有意义，LDA在PLSA的基础上做了改进，选取了多项式分布的共轭先验分布狄利克雷分布作为概率分布的选择。如图2-9，Z是主题，$\theta$是决定文档主题的概率分布参数，$\alpha$是决定文档对主题的概率分布参数$\theta$的超参数。W是特定的单词，$\varphi$是词语对主题的概率分布的参数，$\beta$是决定词语对主题的概率分布参数$\varphi$的超参数。形式化来说模型如下：
+PLSA模型和LDA模型在建立文档和主题间的概率模型和建立主题与词的概率模型时都采用了多项式分布，为了计算的简便性并且让先验更有意义，LDA在PLSA的基础上做了改进，选取了多项式分布的共轭先验分布狄利克雷分布作为概率分布的选择。如图ref{lda}，Z是主题，$\theta$是决定文档主题的概率分布参数，$\alpha$是决定文档对主题的概率分布参数$\theta$的超参数。W是特定的单词，$\varphi$是词语对主题的概率分布的参数，$\beta$是决定词语对主题的概率分布参数$\varphi$的超参数。形式化来说模型如下：
 
 $$\theta _ { i } \sim \operatorname { Dir } ( \alpha ), i \in \{ 1 , \ldots , M \}$$
 $$\varphi _ { k } \sim \operatorname { Dir } ( \beta ), k \in \{ 1 , \ldots , K \}$$
@@ -821,7 +808,7 @@ topic1& topic2& topic3& topic4& topic5& topic6&……\\
 
 \subsubsection{实验环境}
 
-本文的实验主要用到实验设备主要有一台主频2.2GHz，16GB内存，处理器四核i5的个人计算机，操作系统为windows，还有两台主频为2.2GHz、处理器为40核的Intel Xeon E5-2630，内存128G，操作系统为Ubun16.04的服务器。
+本文的实验主要用到实验设备主要有一台主频2.2GHz，16GB内存，处理器四核i5的个人计算机，操作系统为windows；还有两台主频为2.2GHz、处理器为40核的Intel Xeon E5-2630，内存128G，操作系统为Ubun16.04的服务器。
 
 各项实验均在Python3.6环境下编写运行，其中词向量训练、主题向量训练采用Gensim开源软件库，版本为3.0.1。Gensim是一个可用于无监督主题建模和自然语言处理的开源软件库，利用现代统计机器学方法对语言建模，其对大规模语料和在线算法的支持性非常好。利用Gensim可以帮助实现Fasttext、word2vec、doc2vec、LSA、LDA、NMF、TFIDF等经典自然语言处理模型。
 
@@ -841,19 +828,19 @@ topic1& topic2& topic3& topic4& topic5& topic6&……\\
 
 （1）网络参数
 
-本实验BiLSTM网络模型中的参数设置如下：批处理数（batch\_size）为64；最大迭代轮次为50；隐层神经元个数为300；优化算法采用Adam\cite{Adam}（自适应时刻估计法）算法；clip梯度设置为5.0来防止训练过程中遇到梯度爆炸的情况。
+本实验BiLSTM网络模型中的参数设置如下：批处理数（batch\_size）为64；最大迭代轮次为80；隐层神经元个数为300；优化算法采用Adam\cite{Adam}（自适应时刻估计法）算法；clip梯度设置为5.0来防止训练过程中遇到梯度爆炸的情况。
 
 （2）目标函数
 
-目标函数设置为条件随机场对数似然函数（crf\_log\_likelihood），该函数将神经网络层输出的字符-标签矩阵与实际标注标签比较，分别计算序列一元（发射概率）概率得分值与二元（转移概率）概率得分值，加和后得到序列得分值，将这个分值减去该条件随机场的对数归一化作为条件随机场对数似然。最后，将一个batch中的条件随机场对数似然取负作为网络训练的目标函数，用于训练网络。
+目标函数设置为条件随机场对数似然函数（crf\_log\_likelihood），该函数将神经网络层输出的“字符-标签”矩阵与实际标注标签比较，分别计算序列一元（发射概率）概率得分值与二元（转移概率）概率得分值，加和后得到序列得分值，将这个分值减去该条件随机场的对数归一化作为条件随机场对数似然。最后，将一个batch中的条件随机场对数似然和取负作为网络训练的目标函数，用于训练网络。
 
 （3）Xavier初始化
 
-在深度学习过程中，各层神经元不能初始化为0，不然将会遭遇梯度为0的情况。因而要对神经元初始化，Xavier初始化由\cite{Glorot}提出，思路是将初始化应该使得各层的激活值和状态梯度的方差在传播过程中的方差保持一致，这样的初始化方式可以使得神经网络在向前传播时神经元输出值的方差不会不断增大，有较强的稳定性。
+在深度学习过程中，各层神经元不能初始化为0，不然将会遭遇梯度为0的情况。因而要对神经元初始化，Xavier初始化由\cite{Xavier}提出，思路是参数初始化时应该使得各层的激活值和状态梯度的方差在传播过程中的方差保持一致，这样的初始化方式可以使得神经网络在向前传播时神经元输出值的方差不会不断增大，有较强的稳定性。
 
 （4）随机失活（Dropout）
 
-随机失活这种网络训练方法，借鉴正则化的思想，对随机失活作用下的一层节点，对每个节点设置一个节点保留概率，取值在0到1之间，在训练时按概率超过设置阈值时失活。这样的方法使得神经网络不会过于偏向某一个节点，从而是的单个节点的权重不会过大。本实验中对所有神经网络层都采取这一优化训练的方法。
+随机失活这种网络训练方法，借鉴正则化的思想，对随机失活作用下的一层节点，每个节点设置一个节点保留概率，取值在0到1之间，在训练时按概率超过设置阈值时失活。这样的方法使得神经网络不会过于偏向某一个节点，从而是的单个节点的权重不会过大。本实验中对所有神经网络层都采取这一优化训练的方法。
 
 （5）shuffle
 
@@ -866,9 +853,9 @@ shuffle方法是在每轮迭代前将训练集重新排序，使得这些例子�
 \subsection{实验评价指标}
 
 本文实验采用最常见的查准率和查全率作为实验的评价指标。将样例的真实类别与学习器预测类别组合分为真正例、假正例、假反例、真反例，令
-TP、FN、FP、TN分别等于它们的样例数。显然有TP+FN+FP+TN=总样例数，分类结果的“混淆矩阵”如下表：
+TP、FN、FP、TN分别等于它们的样例数。显然有TP+FN+FP+TN=总样例数，分类结果的“混淆矩阵”如表\ref{mix-matrix}：
 
-\begin{table}[H]
+\begin{table}[h]
 \centering
 \begin{tabular}{|l|l|l|}
 \hline
@@ -878,8 +865,8 @@ TP、FN、FP、TN分别等于它们的样例数。显然有TP+FN+FP+TN=总样例
 反例                    & FP（假正例）     & TN（真反例）     \\ \hline
 \end{tabular}
 \caption{分类结果混淆矩阵}
+\label{mix-matrix}
 \end{table}
-
 
 查准率（precision）与查全率（recall）定义如下：
 \begin{equation}
@@ -888,6 +875,7 @@ precision =\frac{T P}{T P+F P}
 \begin{equation}
 recall=\frac{T P}{T P+F N}
 \end{equation}
+
 查准率和查全率是一对矛盾的度量，对于同一个模型来说，往往查准率越高时查全率就越低，用$F_{1}$值来兼顾这两个指标：
 \begin{equation}
 F_{1}=2 \cdot \frac{\text {precision} \cdot \text {recall}}{\text {precision}+\text {recall}}
@@ -911,92 +899,111 @@ PER & 88.77\% & 82.11\% & 0.8531 \\ \hline
 \caption{CharEmbedding-BiLSTM-CRF模型实验结果}
 \end{table}
 
-表3-5是CharEmbedding-BiLSTM-CRF模型的实验结果，该模型对于中文命名识别有较优的效果。同时观察不同类别实体的识别准确度召回度，也能看出模型对于地名的识别较为准确，对于人名、组织名的识别较差。因为地名重复性强，而人名组织名重组复杂性高很多，这两类实体也是模型待提高的要点。
-
-
+表3-5是CharEmbedding-BiLSTM-CRF模型的实验结果，该模型对于中文命名实体识别有较优的效果。同时观察不同类别实体的识别准确度召回度，也能看出该模型对于地名的识别较为准确，对于人名、组织名的识别能力较差。因为地名重复性强，而人名组织名重组复杂性高很多，这两类实体也是模型待提高的要点。
 
 （2）基于位置信息优化方法实验与分析
 
-根据3.4节内容，基于位置信息优化中文字符向量的方法涉及到偏移参数的寻找，采用网格搜索的方法找出较优的参数。当只考虑$x_{t}$前后1个字符的信息时，取不同的$\lambda$值时比较模型F值的变化，效果如下：
+根据3.4节内容，基于位置信息优化中文字符向量的方法涉及到偏移参数的寻找，采用网格搜索的方法找出较优的参数。当只考虑$x_{t}$前后1个字符的信息时，取不同的$\lambda$值时比较模型F值的变化，效果如图\ref{k=1}：
 
 \begin{figure}[H]
 \centering
-\begin{minipage}[t]{\textwidth}
-\includegraphics[width=1\textwidth,height=9cm]{./figure/参数1.jpg}
-\caption{加入周边一个字符信息模型效果图}
-\label{lab:1}
-\end{minipage}
+\includegraphics[width=1\textwidth]{./figure/参数1.jpg}
+\caption{加入周边一个字符信息模型F值随$\lambda$值变化情况}
+\label{k=1}
 \end{figure}
 
-图中的虚线是baseline模型CharEmbedding-BiLSTM-CRF在人名实体、地名实体、组织名实体的和全部实体下F值的情况，实线是$\lambda$取不同值时训练出的模型在各类实体下F值的情况。通过折线图可以看出，引入中文字符周边字符向量的讯息对于提高最终命名实体识别模型的效果有这一定的帮助。这种优化方法对于地名实体和组织名实体效果较好，对与人名实体的效果没有前两者明显，分析其原因这很可能是由于人名字符中，中文字符的含义不明，前后字符间联系没有那么紧密造成的。观察$\lambda$在0到0.7的变化过程，$\lambda$在0.2左右时模型各方面效果都比较好。接下来考虑周边两个字符，在$\lambda_{1}$为0.2的情况下，$\lambda_{2}$取不同值观察这些模型的效果。
+图中的虚线是基准模型“CharEmbedding-BiLSTM-CRF”模型在人名实体、地名实体、组织名实体的和全部实体下F值的情况，实线是$\lambda$取不同值时训练出的模型在各类实体下F值的情况。通过折线图可以看出，引入中文字符周边字符向量的信息对于提高最终命名实体识别模型的效果有这一定的帮助。这种优化方法对于地名实体和组织名实体效果较好，对与人名实体的效果没有前两者明显，分析其原因这很可能是由于人名字符中，中文字符的含义不明，前后字符间联系没有那么紧密造成的。观察$\lambda$在0到0.7时F值的变化过程可以看出，$\lambda$在0.2左右时模型各方面效果都比较好。
 
-\begin{figure}[H]
+接下来考虑周边两个字符，在$\lambda_{1}$为0.2的情况下，$\lambda_{2}$取不同值观察这些模型的效果，如图\ref{k=2}。
+
+\begin{figure}[h]
 \centering
-\begin{minipage}[t]{\textwidth}
-\includegraphics[width=0.8\textwidth,height=7cm]{./figure/参数2.jpg}
+\includegraphics[width=0.7\textwidth]{./figure/参数2.jpg}
 \caption{加入周边两个字符信息模型效果图}
-\label{lab:1}
-\end{minipage}
+\label{k=2}
 \end{figure}
 
-图中虚线是仅有$\lambda_{1}$为0.2时模型对各类实体的F值，实线是$\lambda_{2}$由0.01到0.15间变化时对应模型的效果。从图中观察到周边距离为2的信息对模型效果的提升较为有限，因而最终的中文字符向量嵌入的优化方法是在中文字符分布式表达时，为了解决一字多义，向量空间稀疏的问题，在嵌入的向量中附加周边一个字符系数为0.2的信息。这样的方法与不做优化直接嵌入字符向量的方法相比，模型查准率提高了0.74\%，查全率提高了2.72\%，F值提高了1.75\%。
+图中虚线是仅有$\lambda_{1}$为0.2时模型对各类实体的F值，实线是$\lambda_{2}$由0.01到0.15间变化时对应模型的效果。从图中观察到周边距离为2的信息对模型效果的提升较为有限，表明距离为2的字符能够提供的语义信息较少。因而本文最终采用的中文字符向量嵌入的优化方法是在中文字符分布式表达时，在嵌入的向量中附加周边一个字符系数为0.2的信息。借此来解决中文字符向量一字多义，向量空间稀疏的问题。这样的方法与不做优化直接嵌入字符向量的方法相比，模型查准率提高了0.74\%，查全率提高了2.72\%，F值提高了1.75\%。
 
 \begin{figure}[H]
 \centering
-\begin{minipage}[t]{\textwidth}
-\includegraphics[width=0.8\textwidth,height=7cm]{./figure/训练过程.jpg}
+\includegraphics[width=0.7\textwidth]{./figure/训练过程.jpg}
 \caption{训练过程比较}
-\label{lab:1}
-\end{minipage}
+\label{train_step}
 \end{figure}
 
-每隔一千次迭代训练记录改进方法和原模型loss值和F值的变化情况如图所示，左坐标轴是训练loss，右坐标轴是模型训练到此时在交叉验证集上的F值。可以看出改进的方法在收敛速度，训练效果上都有一定的优势。
+每隔一千次迭代训练记录改进方法和原模型loss值和F值的变化情况如图\ref{train_step}所示，左坐标轴是训练loss，右坐标轴是模型训练到此时在交叉验证集上的F值。可以看出改进的方法在收敛速度，训练效果上都有一定的优势。
 
 （3）基于主题信息的构造方法实验与分析
 
+根据3.5节内容，我们通过腾讯新闻数据集训练字符级LDA主题模型，其中主题数设为50，训练迭代轮次设为200。训练出模型后取出每个字符对应的主题概率向量，作为字符分布式表示的辅助特征。分别比较嵌入方法为150维字符向量、100维字符向量结合50维随机向量和100维字向量结合50维字符主题概率向量。结果如表\ref{exp-topic}：
 
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\multicolumn{2}{|c|}{}       & 150维字向量 & \begin{tabular}[c]{@{}c@{}}100维字向量\\ 50维随机向量\end{tabular} & \begin{tabular}[c]{@{}c@{}}100维字向量\\ 50维主题向量\end{tabular} \\ \hline
+\multirow{3}{*}{LOC实体} & 准确率 & 0.9162  & 0.9201                                                    & \textbf{0.9404}                                                    \\ \cline{2-5} 
+                       & 召回率 & 0.8833  & 0.8843                                                    & \textbf{0.8947}                                                    \\ \cline{2-5} 
+                       & F值  & 0.9046  & 0.9018                                                    & \textbf{0.9170}                                                    \\ \hline
+\multirow{3}{*}{ORG实体} & 准确率 & \textbf{0.8544}  & 0.8085                                                    & 0.8272                                                    \\ \cline{2-5} 
+                       & 召回率 & 0.8377  & \textbf{0.8535}                                                    & 0.8415                                                    \\ \cline{2-5} 
+                       & F值  & \textbf{0.8460}  & 0.8304                                                    & 0.8343                                                    \\ \hline
+\multirow{3}{*}{PER实体} & 准确率 & \textbf{0.8952}  & 0.8894                                                    & 0.8739                                                    \\ \cline{2-5} 
+                       & 召回率 & 0.8443  & 0.8427                                                    & \textbf{0.8695}                                                    \\ \cline{2-5} 
+                       & F值  & 0.8690  & 0.8654                                                    & \textbf{0.8717}                                                    \\ \hline
+\multirow{3}{*}{全部实体}  & 准确率 & \textbf{0.8962}  & 0.8846                                                    & 0.8935                                                    \\ \cline{2-5} 
+                       & 召回率 & 0.8656  & 0.8643                                                    & \textbf{0.8752}                                                    \\ \cline{2-5} 
+                       & F值  & 0.8806  & 0.8744                                                    & \textbf{0.8842}                                                    \\ \hline
+\end{tabular}
+\caption{主题向量辅助特征效果}
+\label{exp-topic}
+\end{table}
 
+从表中我们可以看出，加入字符的主题向量作为辅助特征相比于只使用word2vec训练出的字向量，提高了后续地名实体、人名实体的的识别能力，但是在组织名实体识别上仍有欠缺。同时将该模型与100围字符向量结合50维随机向量作为嵌入方式相比，各项指标均有上升，这也说明加入的全局主题信息对于命名实体识别是有帮助的。综合来看，在维数一致、利用1万多篇新闻训练出字符级主题模型的情况下，本文提出的基于主题信息的中文字符向量构造方法可以提高命名实体识别模型的F值在0.4\%左右。
+
+不过，在实验中发现，结合字符级主题向量的命名实体识别模型收敛较慢。在其余参数设定一致的情况下，仅使用word2vec模型训练出的字符向量，在本文实验中大约在所有训练集被训练40-50轮次时F值不再上升。加入主题向量后，训练完成需要更多的时间，往往要更多轮次的训练才能使得模型最优（大约60-70轮次）。这种现象很可能是两类结合的向量分布不同导致的，也是模型间比较时需要考虑的。
 
 （4）整体改进中文字符特征方法的实验与分析
 
-\begin{table}[H]
+最后，按\ref{all-step}所述流程，将基于位置信息的中文字符向量优化方法与基于主题信息的中文字符向量构造方法结合起来，训练出本章改进的中文字符级特征表示方法。在测试集中比较本文改进模型与其他模型的所有标签准确率、命名实体查准率、命名实体查全率、命名实体F
+值，结果如表\ref{all-model}：
+
+\begin{table}[h]
 \centering
-\begin{tabular}{|l|l|l|l|l|}
-\hline
+\begin{tabular}{|c|c|c|c|c|}
 \hline
                            & 准确率 & 查准率 & 查全率& F值 \\ \hline
-CE-BiLSTM             &     0.9789          &   0.8610             &  0.7925      &   0.8253    \\ \hline
-RE-BiLSTM-CRF              &     0.9789          &   0.8610             &  0.7925      &   0.8253    \\ \hline
+CE-BiLSTM             &     0.9829          &   0.8065             &  0.8198      &   0.8131    \\ \hline
+RE-BiLSTM-CRF              &     0.9799          &   0.8638             &  0.8233      &   0.8431    \\ \hline
 CE-BiLSTM-CRF              &     0.9827          &   0.8937           &    0.8513         & 0.8720   \\ \hline
-modified-CE-BiLSTM-CRF     &     0.9851         &    0.9035            &   0.8710         & 0.8869  \\ \hline
-LDA-CE-BiLSTM-CRF          &               &                &             &    \\ \hline
-LDA-RE-BiLSTM-CRF          &     0.9808         &   0.8733             &  0.8112           & 0.8411   \\ \hline
-LDA-modified-CE-BiLSTM-CRF &               &                &             &    \\ \hline
-\hline
+modified-CE-BiLSTM-CRF     &     0.9851         &    \textbf{0.9035}            &   0.8710         & 0.8869  \\ \hline
+LDA-CE-BiLSTM-CRF          &      0.9855         &    0.8958            &    0.8729         & 0.8842   \\ \hline
+LDA-modified-CE-BiLSTM-CRF &      \textbf{0.9859}         &   0.9017             &  \textbf{0.8815}           &\textbf{0.8915}    \\ \hline
 \end{tabular}
 \caption{不同模型结果比较}
+\label{all-model}
 \end{table}
 
-以上模型运行时间统计柱状图
+其中“CE-BiLSTM”指采用word2vec训练的“char-embedding”字符向量经BiLSTM网络训练，最终用一层softmax激活函数对字符直接预测标签，可见该模型对于整体标签准确率尚可，但是没有联系标签之间的关联，对于命名实体识别能力较差。“RE-BiLSTM-CRF”指不使用预训练的字符向量，而是直接随机出字符向量嵌入。“CE-BiLSTM-CRF”指使用预训练的字符向量嵌入，也是本章的基准模型，相比随机初始化，嵌入预训练的字符向量提高了模型的信息量，提升了命名实体识别模型的效果。“modified-CE-BiLSTM-CRF”指基于位置信息对字符向量嵌入时进行优化。“LDA-CE-BiLSTM-CRF”指在字符向量表示中加入字符级主题向量信息作为辅助信息的方法。“LDA-modified-CE-BiLSTM-CRF”指结合两种优化方法的模型。
 
+实验结果表明，本文提出的改进的中文字符特征表示方法相比于基准模型，有效地提高了整体中文命名实体识别模型的效果。在标准中文命名实体数据集中，所有标签准确率提高了0.33\%,命名实体准确率提高了0.89\%，命名实体召回率提高了3.55\%，F值提高了2.24\%。
 
 \section{本章小结}
 
-
-
-
+本章针对目前的中文命名实体识别模型中，中文字符向量一字多义现象普遍、向量空间稀疏、信息量不足的问题，提出了一种改进的中文字符级特征表示方法。针对一字多义、空间稀疏的问题，采用基于位置信息的优化，在字符向量中加入周边字符的信息；针对信息量不足问题，引入中文字符级主题向量作为辅助特征，扩充 字符级特征表示中的全局篇章级信息。实验表明，本章提出的改进的中文字符级特征表示方法有效地提高了整体中文命名实体识别模型的识别能力。
 
 \chapter{面向复杂中文命名实体识别的层叠深度神经网络模型}
 
 \section{引言}
 
-在上一章节，在目前成熟鲁棒的中文命名实体识别的模型基础上，利用中文构词逻辑和辅助语义信息，提出了一种改进的中文字符级特征表示方法，通过实验表明该方法在标准数据集上提升了命名实体识别任务的效果。
+上一章节中，在目前成熟鲁棒的中文命名实体识别的模型基础上，利用中文构词逻辑和辅助语义信息，提出了一种改进的中文字符级特征表示方法，提升了中文命名实体识别模型在标准数据集上的识别效果。
 
-实际的工程领域中，中文命名实体识别技术还有很多可以提高的方面。在项目工程中应用命名实体识别系统会遇到很多在标准数据集实验中很少遇到或不会遇到的问题：（1）实际应用中会出现长度很长，地名人名组织名嵌套的命名实体，识别这样的实体模型的准确率会下降。（2）互联网文本信息结构杂乱，信息表示的结构各不相同，直接交给中文命名实体识别系统的效果不好，需要采用一些方法对文本进行合理的切割来提高效果。（3）在实际应用中，命名实体识别系统的召回率往往比准确率重要的多，而在上一章的模型中，召回率相较于准确率而言比较低，需要在两者间找到一个更好的平衡点。
+实际的工程领域中，中文命名实体识别技术还有很多值得研究的问题。在项目工程中应用命名实体识别系统会遇到很多在标准数据集实验中很少遇到或不会遇到的问题：（1）实际应用中会出现地名人名组织名嵌套的命名实体，遇到这样的实体时，模型的准确率会下降。（2）互联网文本信息结构杂乱，信息表示的结构各不相同，直接交给中文命名实体识别系统的效果不好。（3）当输入文本长度长时，命名实体识别模型的能力会明显下降，需要采用一些合理的方法对文本进行合理的切割来提高效果。
 
-基于这些原因，本文在众多工作的基础上提出了一个层次深度神经网络模型来解决复杂中文命名实体在实际工程中遇到的种种问题。设计多层CharEmbedding-BiLSTM-CRF结构，低层网络在优先侧重召回率的情况下进行初步的命名实体识别，对于识别出的命名实体送交下一层网络实现文本分割的工作，高层网络再精准的判断语言片段中有哪些命名实体。
+基于这些原因，本文在众多工作的基础上提出了一个层叠深度神经网络模型来解决实际应用中容易遇到的复杂中文命名实体识别问题。设计多层字符级别嵌入的BiLSTM-CRF结构，低层网络在优先侧重召回率的情况下进行初步的命名实体识别，对于识别出的粗粒度命名实体送交下一层网络实现文本分割的工作，高层网络再精准地判断语言片段中有哪些命名实体。
 
-本章的结构如下：4.2节介绍复杂命名实体识别的相关工作研究；4.3节介绍本章提出的层次深度神经网络命名实体识别模型；4.4节是针对该模型的实验以及结果分析；4.5节是本章小结。
+本章的结构如下：4.2节介绍多层模型结构在命名实体识别任务中的相关工作研究；4.3节介绍本章提出的层叠深度神经网络命名实体识别模型；4.4节基于标准数据集和实际应用中的数据集，针对该模型进行实验验证以及结果分析；4.5节是本章小结。
 
 
 
@@ -1004,78 +1011,79 @@ LDA-modified-CE-BiLSTM-CRF &               &                &             &    \
 
 \section{复杂命名实体概念及相关工作}
 
-复杂命名实体是在实际项目工程中对命名实体识别系统准确率影响重要的一系列实体形式，这类问题的本质是潜在实体名之间相互影响，造成BiLSTM-CRF网络结构对于标签预测的准确率下降。这些复杂命名实体的典型特征主要表现在（1）句子长度长、成分复杂、识别其中命名实体困难（2）命名实体名长度长、命名实体前后文关联强，造成命名实体识别系统不能够准确的识别命名实体名的边界（3）实体识别中还含有子命名实体，实体名相互嵌套，标签混乱导致识别错误。
+复杂命名实体是在实际项目应用中对命名实体识别系统效果影响重要的一系列实体形式。这类问题的本质是潜在实体名之间相互影响，造成BiLSTM-CRF网络结构对于标签序列预测的准确率下降。这些复杂命名实体的典型特征主要表现在（1）句子长度长、成分复杂、识别其中命名实体困难（2）命名实体名长度长、命名实体前后文关联强，造成命名实体识别系统不能够准确的识别命名实体名的边界（3）实体识别中还含有子命名实体，实体名相互嵌套，标签混乱导致识别错误。
 
-为了识别这类嵌套混淆类型文本中复杂命名实体，很多学者在识别嵌套混淆的命名实体以及构建多层的学习网络来解决这些问题：
+为了识别这类嵌套混淆类型文本中的复杂命名实体，很多学者在识别嵌套混淆的命名实体以及构建多层的学习网络来解决这些问题：
 
-文献\cite{junsheng}在中文机构名命名实体识别任务中引入层叠条件随机场模型，低层条件随机场仅以观察序列为输入，识别较容易的人名、地名等命名实体，高层条件随机场的输入不仅包含观察值同时也包括低层条件随机场的识别结果，高层条件随机场用来识别复杂的机构名。文献\cite{Yixue}基于中文微博用词简明、流行用语多等特性设计了一个层叠的条件随机场模型来完成命名实体识别任务，低层条件随机场用一个滑动窗口来寻找句子的实体特征，高层随机条件场对句子成分进行实体标注。文献\cite{taobao}在电子商务领域利用电子商务知识库，在BiLSTM-CEF模型的基础上，设计了一个层次的深度学习模型，多任务同时执行分词标注、命名实体识别和填槽任务，将该模型应用在商用的电商平台系统中。文献\cite{Meizhi}利用动态栈和LSTM-CRF模型，一步一步抽取外部命名实体名，这种层次结构对于嵌套的英文生物医学命名实体识别有着很好的效果。文献\cite{Mohammad}提出了一个简单的深度神经网络模型来识别嵌套的命名实体，该模型采用枚举法，列举所有可能的区域和跨度作为潜在的实体，利用神经网络模型对其进行分类，在生物医学领域的语料库有良好的表现。文献\cite{Arzoo}提出了一种新的循环神经网络构建方法，该模型的特点是通过特征抽取构建嵌套实体间的超图表示，这种方法在英文命名实体抽取任务上表现优异。文献\cite{Jia}提出了一种混合层叠的命名实体识别模型，该模型将人名实体识别、地名实体识别、机构名实体识别分别构成一层，高层模型同时利用低层模型识别出的结果，该方法在中文论文数据文本中有较好的表现。文献\cite{yanqun}利用外部数据语料辅助中文嵌套命名实体识别任务，该文献利用中文维基百科数据，通过匹配、过滤和汇聚三个阶段，构建中文嵌套命名实体识别语料库，在嵌套命名实体识别的准确率上有着不错的表现，在召回率上有一定不足。
+文献\cite{junsheng}在中文机构名命名实体识别任务中引入层叠条件随机场模型，低层条件随机场仅以观察序列为输入，识别较容易的人名、地名等命名实体，高层条件随机场的输入不仅包含观察值同时也包括低层条件随机场的识别结果，高层条件随机场用来识别复杂的机构名。文献\cite{Yixue}基于中文微博用词简明、流行用语多等特性设计了一个层叠的条件随机场模型来完成命名实体识别任务，低层条件随机场用一个滑动窗口来寻找句子的实体特征，高层随机条件场对句子成分进行实体标注。文献\cite{taobao}在电子商务领域利用电子商务知识库，在BiLSTM-CRF模型的基础上，设计了一个层次的深度学习模型，多任务同时执行分词标注、命名实体识别和填槽任务，将该模型应用在商用的电商平台系统中。文献\cite{Meizhi}利用动态栈和LSTM-CRF模型，一步一步抽取外部命名实体名，这种层次结构对于嵌套的英文生物医学命名实体识别有着很好的效果。文献\cite{Mohammad}提出了一个简单的深度神经网络模型来识别嵌套的命名实体，该模型采用枚举法，列举所有可能的区域和跨度作为潜在的实体，利用神经网络模型对其进行分类，在生物医学领域的语料库有良好的表现。文献\cite{Arzoo}提出了一种新的循环神经网络构建方法，该模型的特点是通过特征抽取构建嵌套实体间的超图表示，这种方法在英文命名实体抽取任务上表现优异。文献\cite{Jia}提出了一种混合层叠的命名实体识别模型，该模型将人名实体识别、地名实体识别、机构名实体识别分别构成一层，高层模型同时利用低层模型识别出的结果，该方法在中文论文数据文本中有较好的表现。文献\cite{yanqun}利用外部数据语料辅助中文嵌套命名实体识别任务，该文献利用中文维基百科数据，通过匹配、过滤和汇聚三个阶段，构建中文嵌套命名实体识别语料库，在嵌套命名实体识别的准确率上有着不错的表现，在召回率上有一定不足。
 
-通过分析学者们的相关工作，可以发现，进一步解决嵌套命名实体等问题提高命名实体识别效果，构建多层命名实体识别模型，层次性的处理输入文本是一个可行的方向。接下来将介绍本文提出的层叠深度神经网络，该模型可以有针对的解决复杂命名实体的识别问题。
+通过分析学者们的相关工作，可以发现，进一步解决复杂中文命名实体问题、提高识别效果，构建多层命名实体识别模型，层次性的处理输入文本是一个可行的方向。接下来将介绍本文提出的层叠深度神经网络模型，该模型可以针对性的优化复杂命名实体的识别问题。
 
 \section{层叠深度神经网络模型构建}
 
 \subsection{单层模型缺陷分析}
 
-通过第三章改进的中文字符级特征表示方法，利用BiLSTM-CRF模型已经能够在许多标准数据集上有良好的表现。然而在实际应用中还有很多复杂命名实体制约着命名实体识别系统的能力。这样的单层模型在处理数据上较为粗犷，缺少对于局部问题的细致分析能力。在实际应用中在实际应用中对CharEmbedding-BiLSTM-CRF中文命名实体识别框架进行分析，发现还有以下问题阻碍着该模型在实际工程运用中的效果。
+通过第三章改进的中文字符级特征表示方法，利用BiLSTM-CRF模型已经能够在许多标准数据集上有良好的表现。然而在实际应用中还有很多复杂命名实体制约着命名实体识别系统的效果。单层模型在处理数据上较为粗犷，缺少对于局部问题的细致分析能力。在实际应用中CharEmbedding-BiLSTM-CRF中文命名实体识别系统进行分析，发现还有以下问题阻碍着该模型在实际工程应用中的效果。
 
-（1）嵌套命名实体。如图4-1所示，该结果是中文命名实体识别框架对文本的实体识别结果图，目标识别的命名实体是“上海农商行”，但是该命名实体中还有子地名命名实体“上海”，通过BiLSTM识别出各类标签的概率后，通过条件随机场对各种序列的得分进行比较，最终系统并没有将“上海农商行”识别为一个整体。对该结果进行分析判断，“上”“海”两字的“B-LOC”“I-LOC”标签得分很高，即使加上后文非命名实体的标签得分仍然高过上海农商行“B-ORG”“I-ORG”“I-ORG”“I-ORG”“I-ORG”“I-ORG”的标签序列得分，影响了整体实体被识别为组织名的成功率。
+（1）嵌套命名实体。如图\ref{cascade}所示，该结果是单层中文命名实体识别模型对文本的实体识别结果图，目标识别的命名实体是“上海农商行”，但是该命名实体中还有子地名命名实体“上海”，通过BiLSTM识别出各类标签的概率后，通过条件随机场对各种序列的得分进行比较，最终系统并没有将“上海农商行”识别为一个整体。对该结果进行分析判断，“上”“海”两字的“B-LOC”“I-LOC”标签得分很高，即使加上后文非命名实体的标签得分仍然高过上海农商行“B-ORG”“I-ORG”“I-ORG”“I-ORG”“I-ORG”“I-ORG”的标签序列得分，影响了整体实体被识别为组织名的成功率。
 
 \begin{figure}[H]
 \centering
 \begin{minipage}[t]{\textwidth}
-\includegraphics[width=1\textwidth,height=2.14cm]{./figure/嵌套命名实体.jpg}
+\includegraphics[width=1\textwidth]{./figure/嵌套命名实体.jpg}
 \caption{嵌套命名实体}
-\label{lab:1}
+\label{cascade}
 \end{minipage}
 \end{figure}
 
-（2）句子长度长成分复杂。太长太短的文本对于命名实体识别系统效果都有可能出现下降，特别是实际工程应用中，网络中文本的规则性，断句标点使用的规范性相比标准数据集差了很多，在文本长度很长时，条件随机场算法要通过维特比动态规划计算的最大得分路径作为最终的输出结果，从效果来看往往准确率下降很多。如图4-2所示，输入较长文本时出现了命名实体识别错误，而将文本切割输入较短文本，系统可以成功识别出正确的命名实体。这表明文本长度太长是影响命名实体识别系统在实际应用中较大的一个需要解决的问题。
+（2）句子长度长成分复杂。太长的文本对于命名实体识别模型来说难度更大，特别是实际工程应用中，网络中文本的规则性，断句标点使用的规范性相比标准数据集差了很多，在文本长度很长时，条件随机场算法要通过维特比动态规划计算的最大得分路径作为最终的输出结果，从效果来看往往准确率下降很多。如图\ref{long}所示，输入较长文本时出现了命名实体识别错误，而将文本切割输入较短文本，系统可以成功识别出正确的命名实体。这表明文本长度太长是影响命名实体识别系统在实际应用中较大的一个需要解决的问题。
 
 
 \begin{figure}[H]
 \centering
 \begin{minipage}[t]{\textwidth}
-\includegraphics[width=1\textwidth,height=3cm]{./figure/句子长成分复杂.jpg}
+\includegraphics[width=1\textwidth]{./figure/句子长成分复杂.jpg}
 \caption{句子长成分复杂}
-\label{lab:1}
+\label{long}
 \end{minipage}
 \end{figure}
 
-（3）命名实体前后文错误关联。前文与后文有含义上的关联，被命名实体识别系统识别错了边界也是一种常见分类错误，如图4-3，“南京银行资金运营中心”命名实体与前文边界不明被错误标注。当分析文本较长时，由于前后文语义的关联，训练标注集数据不够多等因素，命名实体识别系统常常对于命名实体的边界把握不准。
+（3）命名实体前后文错误关联。前文与后文有含义上的关联，被命名实体识别系统识别错了边界也是一种常见分类错误。如图\ref{mix}，“南京银行资金运营中心”命名实体与前文边界不明被错误标注。当分析文本较长时，由于前后文语义的关联，训练标注集数据不够多等因素，命名实体识别系统常常对于命名实体的边界把握不准。
 
 
 \begin{figure}[H]
 \centering
 \begin{minipage}[t]{\textwidth}
-\includegraphics[width=1\textwidth,height=3cm]{./figure/前后文错误关联.jpg}
+\includegraphics[width=1\textwidth]{./figure/前后文错误关联.jpg}
 \caption{前后文错误关联}
-\label{lab:1}
+\label{mix}
 \end{minipage}
 \end{figure}
 
 \subsection{层叠模型原理与构建}
 
-基于上述理论与经验，本文通过设计多层的命名实体结构来提升命名实体识别系统的效果。建立多层模型主要有两种不同的方法：一种模型是采用递归的方式建立模型，低层模型作为高层模型的一个子模型，在训练时一同优化，这类方法成为层次模型，例如文献\cite{taobao}；另一种模型是采用模型间的线性组合，低层模型与高层模型间相互叠加，不同层针对不同类型的问题，分别训练，这类方法称为层叠方法，例如文献\cite{Yixue}\cite{Jia}。一般来说，层次模型的数学模型更为复杂，训练更为困难，模型的复杂度较大。而层叠模型低层模型和高层模型间是一种松耦合的状态，各层模型独立训练，模型复杂度仅是线性加和关系。在层叠模型中，低层模型对针对的命名实体识别问题优化解决，而对于该层识别过程中产生的错误，高层模型仍可以调整过滤，避免了错误的扩散，提高了最终的识别的准确率。本文采用层叠的方法设计上层网络和下层网络。
+基于上述理论与经验，本文通过设计多层的命名实体结构来提升命名实体识别系统的效果。建立多层模型主要有两种不同的方法：一种多层模型是采用递归的方式建立模型，低层模型作为高层模型的一个子模型，在训练时一同优化，这类方法称为层次模型，例如文献\cite{taobao}；另一种多层模型是采用模型间的线性组合，低层模型与高层模型间相互叠加，不同层针对不同类型的问题，分别训练，这类方法称为层叠方法，例如文献\cite{Yixue,Jia}。
+
+一般来说，层次模型的数学模型更为复杂，训练更为困难，模型的复杂度较大。而在层叠模型中，低层模型和高层模型间是一种松耦合的状态，各层模型独立训练，模型复杂度仅是线性加和关系。低层模型对命名实体识别问题初步解决，而该层识别过程中产生的错误，高层模型仍可以调整过滤，避免了错误的扩散，提高了最终的识别的准确率。本文采用层叠的方法设计低层网络和高层网络，层叠网络如图\ref{casecaed-model}所示。
 
 \begin{figure}[H]
 \centering
-\begin{minipage}[t]{\textwidth}
-\includegraphics[width=1\textwidth,height=5cm]{./figure/层叠模型.jpg}
+\includegraphics[width=1\textwidth]{./figure/层叠模型.jpg}
 \caption{层叠命名实体识别模型示意图}
-\label{lab:1}
-\end{minipage}
+\label{casecaed-model}
 \end{figure}
 
-本文构建层叠结构的基本思路是低层网络在优先保证召回率的情况下，尽可能多地识别出命名实体，并将识别结果传递到高层网络。通过这样的识别后将初步识别结果向后传递的过程也就完成了文本的合理分割，提升了后续识别的效率。高层网络对于低层传来的信息再次识别，若识别结果与原命名实体一致则说明层叠模型与单层模型判别一致，将结果输出即可，若识别结果与原命名实体不一致，则比较两个结果的可能性，选择较佳的结果作为最终的输出。
+本文构建层叠结构的基本思路是低层网络在优先保证召回率的情况下，尽可能多地识别出命名实体，并将识别结果传递到高层网络。通过这样的识别后，将初步识别结果向后传递的过程也就完成了文本的合理分割，提升了后续识别的效率。高层网络对于低层传来的信息再次识别，若识别结果与原命名实体一致则说明层叠模型与单层模型判别一致，将结果输出即可。若识别结果与原命名实体不一致，则比较两个结果的可能性，选择较佳的结果作为最终的输出。
 
 \subsection{面向文本切割的低层网络构建}
 
-为了达到尽量不丢失潜在命名实体信息的目的，在低层BiLSTM-CRF的训练和测试阶段优化该模型。这里来看一下BiLSTM-CRF模型标签预测的流程。对于一个输入序列$X=\left(x_{1}, x_{2}, \ldots, x_{n}\right)$，设该句子经过分布式嵌入，BiLSTM网络后输出的矩阵为P，P矩阵维度为$n \times k$，k代表不同标签的个数，例如在本文BIO标签体系中k为7。$P_{i, j}$即为第i个字符标记为第j个标签的得分称为发射概率。对于潜在的一个预测序列$y=\left(y_{1}, y_{2}, \ldots, y_{n}\right)$，定义这个序列的得分为：
+为了达到尽量不丢失潜在命名实体信息的目的，在低层BiLSTM-CRF的训练和识别阶段优化该模型。这里来看一下BiLSTM-CRF模型标签预测的流程。对于一个输入序列$X=\left(x_{1}, x_{2}, \ldots, x_{n}\right)$，设该句子经过分布式嵌入，BiLSTM网络计算后输出的矩阵为P，P矩阵维度为$n \times k$，k代表不同标签的个数，例如在本文“BIO”标签体系中k为7。$P_{i, j}$即为第i个字符标记为第j个标签的得分，称为发射概率。对于潜在的一个预测序列$y=\left(y_{1}, y_{2}, \ldots, y_{n}\right)$，定义这个序列的得分为：
 
 \begin{equation} 
 s(\bm{X}, \bm{y})=\sum_{i=0}^{n} A_{y_{i}, y_{i+1}}+\sum_{i=1}^{n} P_{i, y_{i}}
+\label{4-1}
 \end{equation}
-.
+
 其中A是转移概率矩阵，大小为$k \times k$，$A_{i, j}$表示标签i转移到标签j的转移概率。也就是序列得分由两部分构成，一部分得分来自序列中当前字符属于当前标签的概率，一部分来自于周边标签和当前标签的转移概率。当序列X给定时，根据所有可能标签序列的softmax函数值可得到序列y的概率：
 
 \begin{equation} 
@@ -1088,26 +1096,23 @@ p(\bm{y} | \bm{X})=\frac{e^{s(\bm{X}, \bm{y})}}{\sum_{\tilde{\bm{y}} \in \bm{Y}_
 \begin{aligned} \log (p(\bm{y} | \bm{X})) &=s(\bm{X}, \bm{y})-\log \left(\sum_{\tilde{\bm{y}} \in \bm{Y}_{\bm{X}}} e^{s(\bm{X}, \widetilde{\bm{y}})}\right) \\ &=s(\bm{X}, \bm{y})-\operatorname*{logadd}\limits_{\widetilde{\bm{y}} \in \bm{Y}_{\bm{X}}} s(\bm{X}, \widetilde{\bm{y}}) \end{aligned}
 \end{equation}
 
-这里$\bm{Y}_{\bm{X}}$代表所有可能的标签序列包括不满足真实标签排序的情况。通过以上公式，希望网络可以生成输出一个有效的变迁序列，在解码时通过维特比动态规划算法找出得分最高的序列：
+这里$\bm{Y}_{\bm{X}}$代表所有可能的标签序列，包括不满足真实标签排序的情况。通过以上公式，希望网络可以生成一个有效的标签序列，在解码时通过维特比动态规划算法找出得分最高的序列：
 
 \begin{equation} 
 \bm{y}^{*}=\underset{\bm{y} \in \bm{Y}_{\bm{X}}}{\operatorname{argmax}} s(\bm{X}, \widetilde{\bm{y}})
 \end{equation}
 
-得到的最高分标签序列就是最终的输出序列，在通过遍历得到识别出的人名、地名、组织名等命名实体即可。整体标签预测的流程如下图所示。
-
+得到的最高分标签序列就是最终的输出序列，在通过遍历得到识别出的人名、地名、组织名等命名实体即可。整体标签预测的流程如下图\ref{predict}所示。
 \begin{figure}[H]
 \centering
-\begin{minipage}[t]{\textwidth}
-\includegraphics[width=1\textwidth,height=7cm]{./figure/标签预测流程.jpg}
+\includegraphics[width=1\textwidth]{./figure/标签预测流程.jpg}
 \caption{BiLSTM-CRF模型标签预测流程}
-\label{lab:1}
-\end{minipage}
+\label{predict}
 \end{figure}
 
-在训练过程中利用对数似然函数作为损失函数，计算当前模型下输出的字符-标签发射概率矩阵的误差。而根据公式4-1，对数似然函数由一元损失值（发射概率矩阵误差）和二元损失值（转移概率矩阵误差）加和组成。将对数似然函数取负作为整个网络的目标函数，进行最小优化，反向传播训练整个网络的参数。
+在训练过程中利用对数似然函数作为损失函数，计算当前模型下输出的“字符-标签”发射概率矩阵的误差。而根据公式\ref{4-1}，对数似然函数由一元损失值（发射概率矩阵误差）和二元损失值（转移概率矩阵误差）加和组成。将对数似然函数取负作为整个网络的目标函数，进行最小优化，反向传播训练整个网络的参数。
 
-本文设计的低层网络的目标是优先考虑召回率的情况下尽可能多的识别出潜在的命名实体，因为有后续网络的存在，不必担心这里松弛算法对最终层叠模型整体准确率的影响。为了达到这个目标，在训练低层网络时对损失函数进行优化，公式4-1调整为：
+本文设计的低层网络的目标是优先考虑召回率的情况下尽可能多的识别出潜在的命名实体。因为有后续网络的存在，不必担心这里松弛算法对最终层叠模型整体准确率的影响。为了达到这个目标，在训练低层网络时对损失函数进行优化，公式\ref{4-1}调整为：
 
 \begin{equation} 
 \begin{split}
@@ -1116,20 +1121,26 @@ r\left(P_{i, y_{i}}\right)&=\left\{\begin{array}{ll}{\lambda \cdot P_{i, y_{i}}}
 \end{split}
 \end{equation}
 
-公式中$\lambda$是惩罚因子，取值在0到1之间。这样调整的含义是在计算标签序列路径得分时，当真实标记为“O”（不是命名实体）时，乘上一个惩罚系数算入标签序列路径得分。使得真实标记为“O”的训练样例的权重降低，而真实标记不为“O”，即标签属于任何一类命名实体样例的权重相较而言得到提高。这样在计算loss时，真实标签为“B-PER”、“I-PER”、“B-ORG”等字符的预测结果对于网络训练影响更大。如上文图4-1为例的嵌套命名实体问题将得到一定程度的改善，因为这样的优化改进会使得模型识别字符为“O”的意愿降低，能够被识别成更长的命名实体将会得到更高的分数。在图4-1的例子中，标签序列中含有的命名实体“上海农商行”（B-ORG，I-ORG，I-ORG，I-ORG，I-ORG）更容易得到比“上海”（B-LOC，I-LOC，O，O，O）更高的分数。
+公式中$\lambda$是惩罚因子，取值在0到1之间。这样调整的含义是在计算标签序列路径得分时，当真实标记为“O”（不是命名实体）时，乘上一个惩罚系数算入标签序列路径得分。因为现实中的语料集中，我们往往关注的命名实体相对整个数据集而言较小，使得模型偏向预测非命名实体标签，使得模型的损失值更小。可是这种偏好与我们希望找出所有命名实体的目标相违背。这里的惩罚因子使得真实标记为“O”的训练样例的权重降低，而真实标记不为“O”，即标签属于任何一类命名实体样例的权重相较而言得到提高。这样在计算loss时，真实标签为“B-PER”、“I-PER”、“B-ORG”等字符的预测结果对于网络训练影响更大。
 
-为了使得低层网络在解码序列时更倾向于输出命名实体标签而不是输出非命名实体标签，在低层网络解码计算过程中将所有字符在属于标签“O”，即不为命名实体的概率乘以惩罚因子$\mu$，$\mu$取值在0到1之间，使得含有更多命名实体标签的序列更容易得到高的分数，被作为结果输出，解码算法如下。
+如上文图\ref{cascade}为例的嵌套命名实体问题将得到一定程度的改善，因为这样的优化改进会使得模型识别字符为“O”的意愿降低，能够被识别成更长的命名实体将会得到更高的分数。在图4-1的例子中，标签序列中含有的命名实体“上海农商行”（B-ORG，I-ORG，I-ORG，I-ORG，I-ORG）更容易得到比“上海”（B-LOC，I-LOC，O，O，O）更高的分数。
 
-\begin{algorithm}[H]
+除此以外，训练好模型后对文本数据进行识别时，解码过程也可以使用惩罚因子提高低层模型识别的召回率。如2.3节所述，条件随机场是通过维特比算法进行解码的。维特比算法的核心思路是： （1）如果概率最大的路径经过概率图中的某点，则从开始点到该点的任意子路径也一定是从开始到该点路径中概率最大的，因为若该结论不成立的话则一定有一条概率更大的全局路径与题设矛盾。（2）假定第i时刻有k个状态，从开始到i时刻的k个状态有k条最短路径，而最终的最短路径必然经过其中的一条。（3）根据上述性质，在计算第i+1状态的最短路径时，只需要考虑从开始到当前的k个状态值的最短路径和当前状态值到第i+1状态值的最短路径即可。
+
+为了使得低层网络在解码序列时更倾向于输出命名实体标签而不是输出非命名实体标签，本文在低层网络解码计算过程中将所有字符在属于标签“O”，即不为命名实体的概率乘以惩罚因子$\mu$，$\mu$取值在0到1之间，使得含有更多命名实体标签的序列更容易得到高的分数，被作为结果输出，解码算法流程见算法\ref{alg1}。
+
+\begin{algorithm}[h]
     \caption{低层网络维特比动态规划解码算法}
     \label{alg1}
     \begin{algorithmic}[1]
-		\STATE 将当前发射概率矩阵标签为非命名实体列概率乘以惩罚因子$\mu$
+		\STATE 输入：待预测文本字向量矩阵经模型计算后得出的发射概率矩阵
+        \STATE 输出：待预测文本的预测标签序列
+		\STATE 将当前发射概率矩阵标签为非命名实体的概率乘以惩罚因子$\mu$
         \STATE 创建一个序列长度×标签个数的零矩阵S记录动态规划各子路径得分
-        \STATE 创建一个序列长度×标签个数的矩阵B记录S矩阵中的路径里，当前结点的上一个节点来记录路径
+        \STATE 创建一个序列长度×标签个数的矩阵B记录S矩阵中的路径线索，用当前结点的上一个节点来记录路径
         \STATE 从第一个节点到最后一个节点遍历： \\
-		通过发射概率矩阵和转移概率矩阵在S矩阵计算从开始点到每一个节点对应的每个标签的最大概率路径，同时在B中记录路径
-		\STATE 在S的最后一列找出最大概率路径的分值，并用回溯法遍历出该最大概率路径的标签序列作为最终输出
+		通过发射概率矩阵和转移概率矩阵，在S矩阵中计算从开始点到每一个节点对应的每个标签的最大概率路径，同时在B中记录路径
+		\STATE 在S的最后一列找出最大概率路径的分值，并用回溯法遍历B矩阵，找出该最大概率路径的标签序列作为最终输出
     \end{algorithmic}
 \end{algorithm}
 
@@ -1137,26 +1148,20 @@ r\left(P_{i, y_{i}}\right)&=\left\{\begin{array}{ll}{\lambda \cdot P_{i, y_{i}}}
 
 \subsection{基于卷积神经网络的高层网络构建}
 
-高层网络模型接受低层网络模型的输出，将接受的文本进一步处理，关键是要找准命名实体的边界。这里在训练高层BiLSTM-CRF模型时，在字符分布式嵌入后加入卷积神经网络模型(CNN)提高高层模型判断命名实体边界的能力\cite{Ma}\cite{kang}，许多文献对该方向进行了研究，不论是英文语料\cite{Zenan}还是中文语料\cite{Yaozong}，该方法都有一定提高效果。CNN的目的是对字符分布式表示的特征进行更细致的特征抽取，使得局部信息产生更有效的连接，对实体边界的识别更为准确。
+高层网络模型接受低层网络模型的输出，将接收的文本进一步处理，关键是要找准命名实体的边界。这里在训练高层BiLSTM-CRF模型时，在字符分布式嵌入后加入卷积神经网络模型(Convolutional Neural Networks，CNN)提高高层模型判断命名实体边界的能力。许多文献对该方向进行了研究\cite{Ma,kang}，不论是英文语料\cite{Zenan}还是中文语料\cite{Yaozong}，该方法都有一定提高效果。CNN的目的是对字符分布式表示的特征进行更细致的特征抽取，使得局部信息产生更有效的连接，对实体边界的识别更为准确。
 
-卷积神经网络原本是图像特征提取中的一种经典的方法，CNN分为卷积层和池化层两个网络结构。近年来很多学者把这一模型引入到自然语言处理的范畴中，CNN对于提取字词分布式表示中的信息也有不错的效果。
+CNN原本是图像特征提取中的一种经典的方法，CNN分为卷积层和池化层两个网络结构。近年来很多学者把这一模型引入到自然语言处理的范畴中，CNN对于提取字词分布式表示中的信息也有不错的效果。
 
-在本文模型设计中，字符向量表示方面采用第三章介绍的改进的中文字符向量改进方法训练。对于输入字符向量的分布式特征，用卷积层（convolution）进行局部信息的特征抽取，通过池化层（pooling）对特征进行降维个压缩，减小过拟合风险的同事提高模型的容错性。最终将抽取出的特征与原始字符向量拼接一同传递给双向长短时记忆网络层。得到每个字符属于不同标签时的一元概率得分，最终送入条件随机场层，该层利用转移概率矩阵，计算当前情况下概率得分最大的路径，使用该路径对输入文本进行标注。
+在本文模型设计中，字符向量表示方面采用第三章介绍的改进的中文字符向量改进方法训练。对于输入字符向量的分布式特征，用卷积层（convolution）进行局部信息的特征抽取，通过池化层（pooling）对特征进行降维压缩，减小过拟合风险的同时提高模型的容错性。最终将抽取出的特征与原始字符向量拼接一同传递给双向长短时记忆网络层。得到每个字符属于不同标签时的一元概率得分，最终送入条件随机场层，该层利用转移概率矩阵，计算当前情况下概率得分最大的路径，使用该路径对输入文本进行标注。高层模型结构图如\ref{high-level}所示。
 
-
-
-\begin{figure}[H]
+\begin{figure}[h]
 \centering
-\begin{minipage}[t]{\textwidth}
-\includegraphics[width=1\textwidth,height=12cm]{./figure/CNN辅助.jpg}
+\includegraphics[width=0.9\textwidth]{./figure/CNN辅助.jpg}
 \caption{高层网络模型结构图}
-\label{lab:1}
-\end{minipage}
+\label{high-level}
 \end{figure}
 
-上下层模型训练完后，在测试使用阶段，输入的是一串新的文本，通过保存后的模型得出字符-标签的概率得分矩阵即发射概率矩阵。在发射概率矩阵和转移概率矩阵的基础上通过维特比解码的方法动态规划的计算出概率得分值最大的路径作为最终的预测标签序列。维特比算法的核心思路是： （1）如果概率最大的路径经过概率图中的某点，则从开始点到该点的任意子路径也一定是从开始到该点路径中概率最大的，因为若该结论不成立的话则一定有一条概率更大的全局路径与题设矛盾。（2）假定第i时刻有k个状态，从开始到i时刻的k个状态有k条最短路径，而最终的最短路径必然经过其中的一条。（3）根据上述性质，在计算第i+1状态的最短路径时，只需要考虑从开始到当前的k个状态值的最短路径和当前状态值到第i+1状态值的最短路径即可，如求t=3时的最短路径，等于求t=2时的所有状态结点$y_{2i}$的最短路径加上t=2到t=3的各节点的最短路径。
-
-低层网络将识别出的命名实体作为输入文本传入高层网络，于此同时传递该命名实体维特比解码得分的均值作为该命名实体的置信度指数。对于高层网络而言，维特比解码方式不变来保证结果的准确度和边界的严谨程度。高层网络接受低层网络输入的文本进行预测，预测结果有以下几种情况：
+低高层模型训练完后，在测试使用阶段，输入的是一串新的文本，通过保存后的低层模型计算得出“字符-标签”的概率得分矩阵（即发射概率矩阵）。在发射概率矩阵和转移概率矩阵的基础上通过维特比解码的方法动态规划地计算出概率得分值最大的路径作为最终的预测标签序列。将低层网络中识别出的合法命名实体序列作为粗粒度的识别结果，传入高层网络。对于高层网络而言，维特比解码方式不变来保证结果的准确度和边界的严谨程度。高层网络接受低层网络输入的文本进行预测，预测结果有以下几种情况：
 
 （1）高层网络识别的标签序列与输入实体及序列一致，认可该命名实体标签结果并输出。
 
@@ -1164,122 +1169,138 @@ r\left(P_{i, y_{i}}\right)&=\left\{\begin{array}{ll}{\lambda \cdot P_{i, y_{i}}}
 
 （3）高层网络识别出多个实体，分别将多个实体重新作为输入传入高层网络，重复以上步骤。
 
+整体层叠深度神经网络命名实体识别模型流程如图\ref{high-low}。
 
-
-\begin{figure}[H]
+\begin{figure}[h]
 \centering
-\begin{minipage}[t]{\textwidth}
-\includegraphics[width=1.1\textwidth,height=11cm]{./figure/层叠模型流程.jpg}
+\includegraphics[width=1\textwidth]{./figure/层叠模型流程.jpg}
 \caption{层叠深度神经网络模型}
-\label{lab:1}
-\end{minipage}
+\label{high-low}
 \end{figure}
 
-这样层叠的模型相比单层模型有许多优点，通过低层网络的将文本合理分割成更小的文本块，舍弃了没那么关注的非命名实体干扰信息，避免了句子长度长成分复杂、命名实体前后文错误关联等问题。而通过惩罚因子$\lambda$、$\mu$提高了低层网络的召回率，确保在经过低层网络时有效信息不会被错误放弃，同时也可以很好地解决嵌套命名实体识别的问题。高层网络接受低层网络的输出，防止了低层网络误差的扩散。简单来说，对于同样一个序列标注任务而言，若序列长度为n，则潜在的标注序列有$k^n$种，其中k是标签的种类数。那么当序列长度n越大时，潜在的标签序列数将以k的幂次速度增加，显然准确预测标签序列的难度就会加大。利用本文层叠的深度神经网络模型的方法，在损失一些不够重要的信息的代价下，较好的控制了问题的规模，降低了识别的难度。
+这样层叠的模型相比单层模型有许多优点，通过低层网络的将文本合理分割成更小的文本块，舍弃了没那么关注的非命名实体干扰信息，避免了句子长度长成分复杂、命名实体前后文错误关联等问题。而通过惩罚因子$\lambda$、$\mu$提高了低层网络的召回率，确保在经过低层网络时有效信息不会被错误放弃，同时也可以很好地提升对嵌套命名实体识别的识别率。高层网络接受低层网络的输出，防止了低层网络误差的扩散。简单来说，对于同样一个序列标注任务而言，若序列长度为n，则潜在的标注序列有$k^n$种，其中k是标签的种类数。那么当序列长度n越大时，潜在的标签序列数将以k的幂次速度增加，显然准确预测标签序列的难度就会加大。利用本文层叠的深度神经网络模型的方法，在损失一些不够重要的信息的代价下，较好的控制了问题的规模，降低了识别的难度。
 
-本文的层叠深度神经网络命名实体识别模型在文本复杂，行文标点不规范的场景下有着更突出的优势。而层叠串行的结构，只需要分别训练两个深度神经网络模型，在复杂度上来看并没有增加太多，适合于实际的工程应用。在现今互联网信息时代，网络文本规范不一，却又蕴含海量信息的场景下本模型有着较好的适应性。实验表明（见下一节）本模型在实际工程应用中有着良好的效果。
+本文的层叠深度神经网络命名实体识别模型在文本复杂，行文断句不规范的场景下有着更突出的优势。而层叠串行的结构，只需要分别训练两个深度神经网络模型，在复杂度上来看并没有增加太多，适合于实际的工程应用。对现今互联网信息时代，网络文本规范不一，却又蕴含海量信息的场景下本模型有着较好的适应性。实验表明（见下一节）本模型在实际工程应用中有着良好的效果。
 
 \section{实验}
 
 \subsection{实验环境与设置}
 
-本章实验环境与设置与第三章实验相同，实验设备主要有一台主频2.20GHz，16GB内存，处理器四核i5的个人计算机，操作系统为window，还有两台主频为2.2GHz、处理器为40核的Intel Xeon E5-2630，内存128G，操作系统为Ubun16.04的服务器。深度学习模型同样采用Tensorflow的编程框架。高层模型中为了更准确识别边界，采用了卷积神经网络对字符向量做特征抽取。有一个卷积层和一个池化层构成，第一个卷积层的卷积核大小为3×3，共64个，池化层窗口大小为2×2，水平和垂直步长为1。
+本章实验环境与设置与第三章实验相同，实验设备主要有一台主频2.20GHz，16GB内存，处理器四核i5的个人计算机，操作系统为windows；还有两台主频为2.2GHz、处理器为40核的Intel Xeon E5-2630，内存128G，操作系统为Ubun16.04的服务器。深度学习模型同样采用Tensorflow的编程框架，版本为1.2.0。高层模型中为了更准确识别边界，采用了卷积神经网络对字符向量做特征抽取。有一个卷积层和一个池化层构成，第一个卷积层的卷积核大小为3×3，共64个，池化层窗口大小为2×2，水平和垂直步长为1。
 
 \subsection{实验数据及构建方法}
 
-本实验中使用了两个数据集，一个数据集是和第三章实验的数据相同的人民日报语料集，另一个数据集是实际工程项目中采集的企业风险识别数据，下面简要介绍一下该数据集。
+本实验中使用了两个数据集，一个数据集是和第三章实验的数据相同的人民日报语料集，另一个数据集是本文作者实际工程项目中采集的企业风险识别数据，下面简要介绍一下该数据集。
 
-笔者在某项目中，为了通过互联网大数据技术识别出风险产品和存在风险的公司，通过爬虫技术爬取了大量网页信息。这些网站包括一系列质量监督局的政府网站、生活类新闻门户网站还有利用关键词和搜索引擎查询的网站等等。项目的目标是识别出风险信息，并关联到相关风险公司以及相关组织。为了识别出这些风险公司和相关组织，采用基于深度学习的命名实体识别模型对组织名进行识别。这类数据包含很多复杂命名实体，反映了现实工程应用中对中文命名实体识别系统的需求。部分数据如下图所示：
+作者在某项目中，为了通过互联网大数据技术识别出风险产品和存在风险的公司，通过爬虫技术爬取了大量网页信息。这些网站包括一系列质量监督的政府网站、生活类新闻门户网站还有利用关键词和搜索引擎查询的网站等等。项目的目标是识别出风险信息，并关联到相关风险公司以及相关组织。为了识别出这些风险公司和相关组织，采用基于深度学习的命名实体识别模型对组织名进行识别。这类数据包含很多复杂命名实体，反映了现实工程应用中对中文命名实体识别系统的需求。部分数据如图\ref{train-data}所示：
 
-\begin{figure}[H]
+\begin{figure}[h]
 \centering
-\begin{minipage}[t]{\textwidth}
-\includegraphics[width=1\textwidth,height=4.7cm]{./figure/数据集.jpg}
+\includegraphics[width=1\textwidth]{./figure/数据集.jpg}
 \caption{数据集构建}
-\label{lab:1}
-\end{minipage}
+\label{train-data}
 \end{figure}
-该数据爬取于互联网，在断句、标点上难免有很多不规范之处。该数据集公司企业名多，嵌套命名实体多，符合第四章提出的复杂命名实体特征。本实验中对该数据集的部分数据进行了标注，来验证本章层叠命名实体模型的效果。共标注了2145个组织名实体，396个人名实体和816个地名实体，通过这些在实际工程项目中出现的互联网新闻复杂信息对本章提出的层叠命名实体识别模型进行效果展现。
+这些数据爬取于互联网，在断句、行文、结构上难免有很多不规范之处。该数据集公司企业名多，嵌套命名实体多，符合第四章提出的复杂命名实体特征。本实验中对该数据集的部分数据进行了标注，来验证本章层叠命名实体模型的效果。共标注了2145个组织名实体，396个人名实体和816个地名实体，通过这些在实际工程项目中出现的互联网新闻复杂信息，对本章提出的层叠命名实体识别模型进行效果验证。
 
 \subsection{实验及结果分析}
 
-本实验分别用训练集训练低层和高层网络，训练低层网络时涉及到训练时损失函数的调整以及解码时权重的调整，依据模型在测试集上的表现设置相应参数。训练出模型后，对于测试数据先经由低层网路初步识别，得出粗粒度的实体，再传入高层网络得到最终结果。
+本实验分别用训练集训练低层网络和高层网络，训练低层网络时涉及到训练时损失函数的调整以及解码时权重的调整，依据模型在测试集上的表现设置相应参数。训练出模型后，对于测试数据先经由低层网路初步识别，得出粗粒度的实体，再传入高层网络得到最终结果。
 
-\begin{figure}[H]
+如图\ref{one-layer}所示，原单层模型中往往由于句子长度长，维特比解码时发生错误，对于命名实体的识别不够精准。组织命名实体“鑫元基金”被模型遗漏。
+
+\begin{figure}[h]
 \centering
-\begin{minipage}[t]{\textwidth}
-\includegraphics[width=1\textwidth,height=2.2cm]{./figure/原单层模型.jpg}
+\includegraphics[width=1\textwidth]{./figure/原单层模型.jpg}
 \caption{原单层模型}
-\label{lab:1}
-\end{minipage}
+\label{one-layer}
 \end{figure}
 
-如上图所示，原单层模型中往往由于句子长度长，维特比解码时发生错误，对于命名实体的识别不够精准。
+图\ref{prob1}是该文本通过本文提出的层叠深度神经网络模型输出的结果。通过本章设计的层叠模型识别后，低层模型的训练方法提高了识别的召回率，尽量避免信息的丢失。而这样的过程也对文本进行了合理的切割，使得高层识别较短的序列，提高高层识别的成功率。而高层神经网络加入了卷积池化层，对于实体边界有着更准确的分割，也过滤了低层模型识别的错误，使得低层识别的不准确信息不会扩散到最终的结果中。
 
-\begin{figure}[H]
+\begin{figure}[h]
 \centering
-\begin{minipage}[t]{\textwidth}
-\includegraphics[width=1\textwidth,height=4.4cm]{./figure/层叠模型效果.jpg}
+\includegraphics[width=1\textwidth]{./figure/层叠模型效果.jpg}
 \caption{层叠模型效果}
-\label{lab:1}
-\end{minipage}
+\label{prob1}
 \end{figure}
 
-通过本章设计的层叠模型识别后，低层模型的训练方法提高了识别的召回率，尽量避免信息的丢失。而这样的过程也对文本进行了合理的切割，使得高层识别较短的序列，提高高层识别的成功率。而高层神经网络加入了卷积池化层，对于实体边界有着更准确的分割，也过滤了低层模型识别的错误，使得低层识别的不准确信息不会扩散到最终的结果中。
-
-对于图4-1中为代表的嵌套命名实体问题，如下图所示，本章设计的层叠网络也能够较好的解决这一问题。
+对于图\ref{cascade}中为代表的嵌套命名实体问题，如图\ref{solve-cascade}所示，本章设计的层叠网络也能够较好的解决这一问题。
 
 \begin{figure}[H]
 \centering
-\begin{minipage}[t]{\textwidth}
-\includegraphics[width=1\textwidth,height=4.3cm]{./figure/层叠模型嵌套命名实体.jpg}
+\includegraphics[width=1\textwidth]{./figure/层叠模型嵌套命名实体.jpg}
 \caption{嵌套命名实体}
-\label{lab:1}
-\end{minipage}
+\label{solve-cascade}
 \end{figure}
 
-在人民日报和企业风险识别数据集上分别进行实验，结果如下：
+用标准数据集人民日报语料对本章提出的层叠深度神经网络命名实体识别模型进行实验，字符嵌入分别使用直接使用word2vec训练出的字向量的简单表示和第三章提出的改进的中文字符级表示进行实验比较，结果如表\ref{renmin}。
 
-\begin{table}[H]
+\begin{table}[h]
 \centering
-\begin{tabular}{|l|l|l|l|l|l|}
+\begin{tabular}{|c|c|c|c|c|c|}
 \hline
-\multicolumn{2}{|l|}{\multirow{2}{*}{}} & \multicolumn{2}{l|}{人民日报数据集} & \multicolumn{2}{l|}{企业风险识别数据集} \\ \cline{3-6} 
-\multicolumn{2}{|l|}{}                  & 单层模型          & 层叠模型         & 单层模型           & 层叠模型          \\ \hline
-\multirow{3}{*}{LOC实体}       & 准确率      & 0.9324        & 0.9352       & 0.8641         & 0.8945        \\ \cline{2-6} 
-                             & 召回率      & 0.8825        & 0.8884       & 0.8493         & 0.8730        \\ \cline{2-6} 
-                             & F值       & 0.9068        & 0.9112       & 0.8567         & 0.8838        \\ \hline
-\multirow{3}{*}{ORG实体}       & 准确率      & 0.8231        & 0.8605       & 0.8298         & 0.8695        \\ \cline{2-6} 
-                             & 召回率      & 0.8287        & 0.8644       & 0.8101         & 0.8506        \\ \cline{2-6} 
-                             & F值       & 0.8259        & 0.8625       & 0.8197         & 0.8600        \\ \hline
-\multirow{3}{*}{PER实体}       & 准确率      & 0.8877        & 0.8811       & 0.8734         & 0.8699        \\ \cline{2-6} 
-                             & 召回率      & 0.8211        & 0.8553       & 0.8535         & 0.8611        \\ \cline{2-6} 
-                             & F值       & 0.8531        & 0.8680       & 0.8633         & 0.8654        \\ \hline
-\multirow{3}{*}{全部实体}        & 准确率      & 0.8937        & 0.9044       & 0.8433         & 0.8756        \\ \cline{2-6} 
-                             & 召回率      & 0.8513        & 0.8831       & 0.8241         & 0.8571        \\ \cline{2-6} 
-                             & F值       & 0.8720        & 0.8937       & 0.8337         & 0.8666        \\ \hline
+\multicolumn{2}{|c|}{\multirow{2}{*}{}} & \multicolumn{2}{c|}{单层模型} & \multicolumn{2}{c|}{层叠模型} \\ \cline{3-6} 
+\multicolumn{2}{|c|}{}                  & 简单表示     & 改进表示    & 简单表示     & 改进表示    \\ \hline
+\multirow{3}{*}{LOC实体}       & 准确率      & 0.9324       & 0.9342     & \textbf{0.9402}       & 0.9360     \\ \cline{2-6} 
+                             & 召回率      & 0.8825       & \textbf{0.9027}     & 0.8846       & 0.8992     \\ \cline{2-6} 
+                             & F值       & 0.9068       & \textbf{0.9182}     & 0.9115       & 0.9172     \\ \hline
+\multirow{3}{*}{ORG实体}       & 准确率      & 0.8231       & 0.8502     & 0.8633       & \textbf{0.8709}     \\ \cline{2-6} 
+                             & 召回率      & 0.8287       & 0.8527     & \textbf{0.8685}       & 0.8618     \\ \cline{2-6} 
+                             & F值       & 0.8259       & 0.8515     & 0.8659       & \textbf{0.8663}     \\ \hline
+\multirow{3}{*}{PER实体}       & 准确率      & 0.8877       & 0.8906     & 0.8919       & \textbf{0.9094}     \\ \cline{2-6} 
+                             & 召回率      & 0.8211       & \textbf{0.8700}     & 0.8528       & 0.8604     \\ \cline{2-6} 
+                             & F值       & 0.8531       & 0.8802     & 0.8719       & \textbf{0.8842}     \\ \hline
+\multirow{3}{*}{全部实体}        & 准确率      & 0.8937       & 0.9017     & 0.9075       & \textbf{0.9132}     \\ \cline{2-6} 
+                             & 召回率      & 0.8513       & \textbf{0.8815}     & 0.8710       & 0.8787     \\ \cline{2-6} 
+                             & F值       & 0.8720       & 0.8915     & 0.8888       & \textbf{0.8956}     \\ \hline
 \end{tabular}
-\caption{层叠深度神经网络模型实验结果}
+\caption{人民日报数据集实验结果}
+\label{renmin}
 \end{table}
 
-通过实验结果可以看出，层叠模型相比基础的单层模型而言，对人民日报数据集实体识别的准确率提高了1.2\%，召回率提高了3.74\%，F值提高了1.95\%；对项目中标注的企业风险识别数据集实体识别的准确率提高了3.8\%，召回率提高了4\%，F值提高了3.95\%.将实验结果不同类标签的F值作柱状图，效果如下：
+从实验结果可以看出，不论是采用简单word2vec训练出的字向量直接嵌入，还是使用本文第三章提出的改进方法进行嵌入，层叠模型较单层模型都有更好的表现。层叠模型相比于单层模型在组织名命名实体识别效果上提高了很多，在人名实体识别上有一定优势，在地名实体识别上与单层模型效果相当。这也与本章层叠模型设计的方法就是为了解决长度长、嵌套、混淆的命名实体，通过层叠网络分层处理，提高对复杂中文命名实体的识别能力。实验表明在人民日报数据集上，层叠深度神经网络模型相比单层模型准确率提高了1.41\%，召回率提高了0.98\%，F值提高了1.19\%。
 
-\begin{figure}[H]
+在企业风险识别数据集上对层叠模型进行实验，结果如表\ref{risk}所示。
+\begin{table}[H]
 \centering
-\begin{minipage}[t]{\textwidth}
-\includegraphics[width=1\textwidth,height=9cm]{./figure/层叠模型F值比较.jpg}
-\caption{数据集构建}
-\label{lab:1}
-\end{minipage}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\multicolumn{2}{|c|}{}                  & 单层模型           & 层叠模型          \\ \hline
+\multirow{3}{*}{LOC实体}       & 准确率      & 0.8641         & \textbf{0.8945}        \\ \cline{2-4} 
+                             & 召回率      & 0.8493         & \textbf{0.8730}        \\ \cline{2-4} 
+                             & F值       & 0.8567         & \textbf{0.8838}        \\ \hline
+\multirow{3}{*}{ORG实体}       & 准确率      & 0.8298         & \textbf{0.8695}        \\ \cline{2-4} 
+                             & 召回率      & 0.8101         & \textbf{0.8506}        \\ \cline{2-4} 
+                             & F值       & 0.8197         & \textbf{0.8600}        \\ \hline
+\multirow{3}{*}{PER实体}       & 准确率      & \textbf{0.8734}         & 0.8699        \\ \cline{2-4} 
+                             & 召回率      & 0.8535         & \textbf{0.8611}        \\ \cline{2-4} 
+                             & F值       & 0.8633         & \textbf{0.8654}        \\ \hline
+\multirow{3}{*}{全部实体}        & 准确率      & 0.8433         & \textbf{0.8756}        \\ \cline{2-4} 
+                             & 召回率      & 0.8241         & \textbf{0.8571}        \\ \cline{2-4} 
+                             & F值       & 0.8337         &\textbf{0.8666}        \\ \hline
+\end{tabular}
+\caption{企业风险识别数据实验结果}
+\label{risk}
+\end{table}
+
+字符嵌入都按改进后的中文字符表示进行嵌入，可以看出企业风险识别数据在企业风险数据集上，层叠模型的整体效果好于单层模型。除了人名实体识别效果接近外，地名实体和组织名实体都有叫大幅的提高。这也与企业风险识别数据来源于互联网风险企业信息，包含复杂中文命名实体较多有关。对所有实体而言，层叠模型相比于单层模型准确率提高3.83\%，召回率提高4.00\%，F值提高3.95\%。
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.9\textwidth]{./figure/层叠模型F值比较.jpg}
+\caption{F值比较}
+\label{compare}
 \end{figure}
 
-通过上图可以看出本章提出的层叠神经网络模型对于组织名的识别有着很好的效果，这也是因为设计该网络针对的一些列问题，比如嵌套命名实体，长度长的文本等，涉及更多的都是组织名的实体识别。模型对于地名、人名的识别也有一定效果，总体而言优于单层模型。不过层叠模型涉及到两层网络的训练，相比于单层网络而言，复杂度稍大，训练时间较长。
+将两个数据集各类实体识别的F值进行比较，如图\ref{compare}。可以看出本章提出的层叠神经网络模型整体上对单层模型有优势，特别是对组织名实体的识别有较好的效果。不过层叠模型涉及到两层网络的训练，相比于单层网络而言，复杂度稍大，训练时间较长。如果数据集不具有本章4.3.1介绍的复杂命名实体特点的话，层叠模型的优势会减小。因而，数据杂乱、嵌套命名实体多、断句不清等情况下，可以优先使用该层叠模型。
+
 
 \section{本章小结}
 
-本章探究了中文命名实体识别中的复杂中文命名实体识别问题。本章先分析了复杂命名实体出现的原因，总结了嵌套命名实体、长度长文本、上下文错误关联三类影响识别效果的原因。针对这些问题本文设计了一个层叠的深度神经网络模型来解决复杂中文命名实体问题。本章总结比较了前人对于多层次命名实体结构，借鉴这些工作，提出了本章的模型。
+本章探究了中文命名实体识别中的复杂命名实体识别问题。本章先分析了复杂命名实体出现的原因，总结了嵌套命名实体、长度长文本、上下文错误关联三类影响识别效果的因素。之后总结了前人对于多层次命名实体结构的研究，基于这些工作，叙述了本章层叠模型的构建思路。最终，针对复杂中文命名实体设计了一个层叠的深度神经网络模型来解决复杂中文命名实体问题。
 
-本模型低层网络的目标是过滤无关命名实体识别的信息，通过优化损失函数和解码方法，提高潜在命名实体信息的召回率，同时切割了文本降低高层模型识别的难度。识别出粗粒度的命名实体后传入高层网络，高层网络在BiLSTM-CRF模型的基础上加入卷积池化层来提高对命名实体边界的判别能力。最终将文本信息划分为不可分割的实体后作为最终结果输出。通过实验证明，本层叠模型提高了中文命名实体识别的效果，特别是对于组织名实体的识别有了较大的提升。
+本模型低层网络的目标是过滤无关命名实体识别的信息，通过优化损失函数和解码方法，提高潜在命名实体信息的召回率，同时切割了文本降低高层模型识别的难度。识别出粗粒度的命名实体后传入高层网络，高层网络在BiLSTM-CRF模型的基础上加入卷积池化层来提高对命名实体边界的判别能力。最终将文本信息划分为不可分割的实体后作为最终结果输出。实验表明，本层叠模型提高了中文命名实体识别的效果，特别是对于组织名实体的识别有了较大的提升。
 
 \chapter{总结与展望}
 
@@ -1304,7 +1325,12 @@ r\left(P_{i, y_{i}}\right)&=\left\{\begin{array}{ll}{\lambda \cdot P_{i, y_{i}}}
 % 致谢，应放在《结论》之后
 \begin{acknowledgement}
 %thanks
-时光荏苒，在南京大学的本科的学习生活即将结束，四年的时间转瞬即逝，这几年的经历必将成为我人生宝贵的财富。在此论文完成之际，谨向这几年来帮助我的老师和同学表达最衷心的感
+
+远东大道两侧的草地又渐渐换上了绿色的新衣，系楼前的樱花又迎来了盛开。转眼三年研究生生涯行将结束，我也要对八年南大生活学习说一声再见了。
+
+在南大，我遇到了许许多多优秀的老师和同学。感谢恩师王崇骏教授多年来对我的指导和关心，您对学术的严谨，对工作的负责，对生活的热爱都一点点地影响着我，让我有勇气与能力面对一个又一个新的挑战。感谢IIP工作组的小伙伴们，三年来，我们一起学习成长，一起运动娱乐，点点滴滴都将是我青春的珍贵回忆。完成本论文工作过程中，感谢你们与我一起交流讨论，在每一个细节给我的帮助，祝你们今后的学习和工作顺利。感谢家人多年学生生涯的支持，让我可以无所顾虑的追求自己的理想，希望今后自己可以给你们带来幸福快乐。
+
+最后再一次对母校南京大学说一声感谢，南大真诚、平实、儒雅、担当的内在人格将是我一生的财富。祝福从这里离开的、留在这里的、未来来到这里的人们一切都好。
 
 \end{acknowledgement}
 
@@ -1319,34 +1345,6 @@ r\left(P_{i, y_{i}}\right)&=\left\{\begin{array}{ll}{\lambda \cdot P_{i, y_{i}}}
 \bibliography{sample}
 
 
-% 附录，必须放在参考文献后，backmatter前
-\appendix
-\chapter{MPTCP内核源代码修改}\label{app:1}
-\section{函数mptcp\_v4\_subflows()}
-\begin{lstlisting}[language=C]
-static void mptcp_v4_subflows(struct sock *meta_sk, const struct mptcp_loc4 *loc, struct mptcp_rem4 *rem)
-{
-   int i;
-   int num;
-   printk(KERN_INFO "******** Entering mptcp_v4_subflows ********\n");
-
-   initial_my_global_var();
-   switch(my_counter)
-   {
-		case 1 : num = Fir; break;
-		case 2 : num = Sec; break;
-		case 3 : num = Thi; break;
-		default : num = Fir;
-	}
-
-	for (i = 1; i < num; i++)
-	{
-		printk(KERN_INFO "******** in mptcp_v4_subflows i = %d num = %d********\n",i,num);
-		mptcp_init4_subsockets(meta_sk, loc, rem);
-	}
-	printk(KERN_INFO "******** Leaving mptcp_v4_subflows ********\n");
-}
-\end{lstlisting}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 书籍附件
@@ -1354,31 +1352,20 @@ static void mptcp_v4_subflows(struct sock *meta_sk, const struct mptcp_loc4 *loc
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 作者简历与科研成果页，应放在backmatter之后
 \begin{resume}
-% 论文作者身份简介，一句话即可。
-\begin{authorinfo}
-\noindent 韦小宝，男，汉族，1985年11月出生，江苏省扬州人。
-\end{authorinfo}
-% 论文作者教育经历列表，按日期从近到远排列，不包括将要申请的学位。
-\begin{education}
-\item[2007年9月 --- 2010年6月] 南京大学计算机科学与技术系 \hfill 硕士
-\item[2003年9月 --- 2007年6月] 南京大学计算机科学与技术系 \hfill 本科
-\end{education}
 % 论文作者在攻读学位期间所发表的文章的列表，按发表日期从近到远排列。
 \begin{publications}
-\item Xiaobao Wei, Jinnan Chen, ``Voting-on-Grid Clustering for Secure
-  Localization in Wireless Sensor Networks,'' in \textsl{Proc. IEEE International
-    Conference on Communications (ICC) 2010}, May. 2010.
-\item Xiaobao Wei, Shiba Mao, Jinnan Chen, ``Protecting Source Location Privacy
-  in Wireless Sensor Networks with Data Aggregation,'' in \textsl{Proc. 6th
-    International Conference on Ubiquitous Intelligence and Computing (UIC)
-    2009}, Oct. 2009.
+\item QiaoY, \textbf{GU Y}, Wu J and etc, A Truthful Profit-oriented Mechanism for Mobile Crowdsensing. In Proceedings of ISPA2018, Melbourne, Australia, Dec. 11-13, 2018:64-71.
 \end{publications}
 % 论文作者在攻读学位期间参与的科研课题的列表，按照日期从近到远排列。
 \begin{projects}
-\item 国家自然科学基金面上项目``无线传感器网络在知识获取过程中的若干安全问题研究''
-（课题年限~2010年1月 --- 2012年12月），负责位置相关安全问题的研究。
-\item 江苏省知识创新工程重要方向项目下属课题``下一代移动通信安全机制研究''
-（课题年限~2010年1月 --- 2010年12月），负责LTE/SAE认证相关的安全问题研究。
+\item 	科技部重点研发计划“跨时空异构数据的结构化描述和语义协同”，编号2016YFB1001102
+（课题年限~2016年6月 --- ），负责数据链接、语义融合的研究。
+\item 江苏省质量和标准化研究院资助项目``缺陷产品案源分析系统''
+（课题年限~2016年12月 --- 2018年12月），负责命名实体识别、智能预警研究。
+\item 江苏省质量和标准化研究院资助项目``电商平台缺陷消费品信息采集分析''
+（课题年限~2018年12月 --- 2019年12月），负责情感分析、缺陷产品召回研究。
+\item 国家自然科学基金``复杂环境下众包机制设计问题研究''，编号	61876080
+（课题年限~2019年1月 --- 2022年12月），负责众包、机制设计研究。
 \end{projects}
 \end{resume}
 
