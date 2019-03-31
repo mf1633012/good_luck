@@ -910,6 +910,7 @@
     \vskip 30pt
     \normalfont\normalsize\njut@value@en@date
   \end{center}
+  \clearpage
 }
 
 \newcommand*{\abstracttitlea}[1]{%
